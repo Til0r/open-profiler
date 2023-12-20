@@ -1,4 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer {
+  header {
+    box-shadow: #0000000d 0px 1px 1px 0px;
+  }
+
+  section {
+    &:not(.caption) {
+      @apply h-screen;
+    }
+
+    &:nth-child(even) {
+      @apply bg-indigo-100;
+    }
+
+    #skills {
+      img {
+        @apply rounded-lg;
+      }
+    }
+  }
+}
