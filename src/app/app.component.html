@@ -17,7 +17,10 @@
 <section>
   <div class="grid grid-cols-2 h-full">
     <div class="flex flex-col justify-center items-center">
-      <div class="text-4xl">👋 Hi I'm [NAME_SURNAME]</div>
+      <div class="text-4xl flex gap-2">
+        <div class="animate-bounce">👋</div>
+        Hi I'm [NAME_SURNAME]
+      </div>
       <div class="text-3xl font-bol text-indigo-600">[JOB_QUALIFICATION]</div>
     </div>
     <div class="flex flex-col justify-center items-center"></div>
@@ -44,10 +47,10 @@
 <section id="projects">
   <div>Project</div>
 
-  <div class="flex flex-wrap gap-2 p-2">
+  <div class="flex flex-wrap gap-2 p-2 h-full">
     @for (project of projects; track $index) {
-      <div class="bg-indigo-50 rounded max-w-[15rem]">
-        <img [src]="project.heroLink" />
+      <div class="backdrop-blur-lg bg-transparent rounded max-w-[15rem] h-fit my-auto">
+        <img class="rounded-lg" [src]="project.heroLink" />
         <div class="p-2">
           <div>{{ project.name }}</div>
           <div>

@@ -4,8 +4,19 @@
 @import 'tailwindcss/utilities';
 
 @layer {
-  header {
-    box-shadow: #0000000d 0px 1px 1px 0px;
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url('./assets/bbblurry.svg');
+  }
+
+  // header {
+  //   box-shadow: #0000000d 0px 1px 1px 0px;
+  // }
+
+  footer {
+    box-shadow: rgba(0, 0, 0, 0.0509803922) 0px -4px 1px 0px;
   }
 
   section {
@@ -14,7 +25,7 @@
     }
 
     &:nth-child(even) {
-      @apply bg-indigo-100;
+      // @apply bg-indigo-100;
     }
 
     #skills {
