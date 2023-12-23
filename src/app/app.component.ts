@@ -11,6 +11,15 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'open-profiler';
+  color = '1DB954';
+
+  socials = [
+    { name: 'linkedin', link: 'https://' },
+    { name: 'twitter', link: 'https://' },
+    { name: 'github', link: 'https://' },
+    { name: 'gitlab', link: 'https://' },
+    { name: 'medium', link: 'https://' },
+  ];
 
   badges = [
     { name: 'angular', iconName: 'angular' },
@@ -20,7 +29,7 @@ export class AppComponent {
     { name: 'bootstrap', iconName: 'bootstrap' },
     { name: 'reactivex', iconName: 'reactivex' },
     { name: 'redux', iconName: 'redux' },
-    { name: 'Electron', iconName: 'Electron' },
+    { name: 'electron', iconName: 'Electron' },
     { name: 'npm', iconName: 'npm' },
     { name: 'Ionic', iconName: 'Ionic' },
     { name: 'socket.io', iconName: 'socket.io' },
@@ -34,6 +43,81 @@ export class AppComponent {
     { name: 'docker', iconName: 'docker' },
     { name: 'Arduino', iconName: 'Arduino' },
     { name: 'RaspberryPi', iconName: 'RaspberryPi' },
+  ];
+
+  experiences = [
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Experience',
+      company: 'Hooli',
+      date: {
+        end: 'Present',
+        start: '02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
   ];
 
   projects = [
@@ -78,5 +162,6 @@ export class AppComponent {
       heroLink: './assets/project.jpg',
     },
   ];
+
   constructor() {}
 }

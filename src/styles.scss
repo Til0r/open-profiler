@@ -3,35 +3,16 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body {
+  font-family: 'Inter';
+}
+
 @layer {
-  body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-image: url('./assets/bbblurry.svg');
-  }
-
-  // header {
-  //   box-shadow: #0000000d 0px 1px 1px 0px;
-  // }
-
-  footer {
-    box-shadow: rgba(0, 0, 0, 0.0509803922) 0px -4px 1px 0px;
-  }
-
   section {
-    &:not(.caption) {
-      @apply h-screen;
-    }
+    @apply w-full flex flex-col gap-8;
 
-    &:nth-child(even) {
-      // @apply bg-indigo-100;
-    }
-
-    #skills {
-      img {
-        @apply rounded-lg;
-      }
+    &:not(.intro) {
+      @apply max-w-4xl md:px-0 px-4;
     }
   }
 }

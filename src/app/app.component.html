@@ -1,200 +1,102 @@
-<header class="text-gray-600 body-font bg-transparent md:fixed block w-full backdrop-blur-xl z-10">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex gap-2 title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <div class="text-3xl text-indigo-400">{{ '{' }}</div>
-      <div class="font-bold text-xl uppercase">til0r</div>
-      <div class="text-3xl text-indigo-400">{{ '}' }}</div>
-    </a>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-gray-900" href="#">Home</a>
-      <a class="mr-5 hover:text-gray-900" href="#skills">Skills</a>
-      <a class="mr-5 hover:text-gray-900" href="#projects">Project</a>
-      <a class="mr-5 hover:text-gray-900" href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section>
-  <div class="grid grid-cols-2 h-full">
-    <div class="flex flex-col justify-center items-center">
-      <div class="text-4xl flex gap-2">
-        <div class="animate-bounce">👋</div>
-        Hi I'm [NAME_SURNAME]
+<main class="flex flex-col gap-20 items-center">
+  <section class="intro md:p-36 py-20 bg-[#{{ color }}]">
+    <div class="flex gap-4 items-center justify-center max-w-4xl m-auto">
+      <!-- <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+        <span class="flex h-full w-full items-center justify-center rounded-full bg-gray-100">
+          PO
+        </span>
+      </span> -->
+      <div class="flex flex-col gap-2">
+        <div>
+          <h1 class="text-5xl font-bold text-white">John Smit</h1>
+          <p class="text-2xl text-white">Senior FrontEnd Developer</p>
+        </div>
+        <div class="flex flex-row gap-2 mx-auto items-center w-full">
+          @for (social of socials; track $index) {
+            <a [href]="social.link" target="_blank">
+              <img class="w-5" src="https://cdn.simpleicons.org/{{ social.name }}/fff" />
+            </a>
+          }
+        </div>
       </div>
-      <div class="text-3xl font-bol text-indigo-600">[JOB_QUALIFICATION]</div>
     </div>
-    <div class="flex flex-col justify-center items-center"></div>
-  </div>
-</section>
+  </section>
 
-<section id="skills">
-  <div>Skills</div>
-  <div class="grid grid-cols-2 h-full">
-    <div></div>
-    <div class="flex flex-wrap gap-1 h-fit justify-center items-center my-auto">
+  <section>
+    <h2 class="text-4xl font-bold italic">Skills</h2>
+    <div class="flex flex-wrap gap-4">
       @for (badge of badges; track $index) {
         <div
-          class="flex gap-1 items-center px-4 py-1 rounded text-xs font-medium bg-indigo-200 text-indigo-800 h-fit"
+          class="inline-flex items-center gap-2 justify-center rounded-full px-4 py-0.5 w-fit font-semibold text-xl bg-gray-100 hover:bg-gray-50 cursor-default"
         >
-          <img class="w-5" src="https://cdn.simpleicons.org/{{ badge.iconName }}/4844ad" />
-          <span class="">{{ badge.name }}</span>
+          <img class="w-5" src="https://cdn.simpleicons.org/{{ badge.iconName }}/{{ color }}" />
+          <div class="text-gray-700 capitalize">
+            {{ badge.name }}
+          </div>
         </div>
       }
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="projects">
-  <div>Project</div>
-
-  <div class="flex flex-wrap gap-2 p-2 h-full">
-    @for (project of projects; track $index) {
-      <div class="backdrop-blur-lg bg-transparent rounded max-w-[15rem] h-fit my-auto">
-        <img class="rounded-lg" [src]="project.heroLink" />
-        <div class="p-2">
-          <div>{{ project.name }}</div>
-          <div>
-            <div>
-              {{ project.description }}
-            </div>
+  <section>
+    <h2 class="text-4xl font-bold italic">Experience</h2>
+    <div class="flex flex-col gap-4 items-center">
+      @for (experience of experiences; track experience; let idx = $index) {
+        <div class="flex flex-col gap-8 rounded-2xl border shadow-sm w-full p-6">
+          <div class="flex flex-col">
+            <h3 class="text-3xl font-semibold">{{ experience.title }} {{ idx }}</h3>
+            <p class="text-lg text-gray-600">{{ experience.company }}</p>
+            @if (experience.date; as experienceDate) {
+              <p class="text-sm text-gray-400">
+                {{ experienceDate.start }} - {{ experienceDate.end }}
+              </p>
+            }
+          </div>
+          <div class="">
+            <p>{{ experience.description }}</p>
           </div>
         </div>
-      </div>
-    }
-  </div>
-</section>
-
-<section id="contact">
-  <div class="text-gray-600 relative h-full">
-    <div class="container px-5 py-24 m-auto h-full flex flex-col justify-center items-center">
-      <div class="flex flex-col text-center w-full mb-12">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact me</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Ask me anything</p>
-      </div>
-      <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <div class="flex flex-wrap -m-2">
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="w-full bg-gray-50 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="w-full bg-gray-50 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-          </div>
-          <div class="p-2 w-full">
-            <div class="relative">
-              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                class="w-full bg-gray-50 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              ></textarea>
-            </div>
-          </div>
-          <div class="p-2 w-full">
-            <button
-              class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-            >
-              Button
-            </button>
-          </div>
-        </div>
-      </div>
+      }
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="text-gray-600 body-font">
-  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-    <a class="flex gap-2 title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <div class="text-3xl text-indigo-400">{{ '{' }}</div>
-      <div class="font-bold text-xl uppercase">til0r</div>
-      <div class="text-3xl text-indigo-400">{{ '}' }}</div>
-    </a>
-    <p
-      class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
-    >
-      Made with ❤️ by
+  <section>
+    <h2 class="text-4xl font-bold italic">Projects</h2>
+    <div class="flex gap-4 md:w-[56rem] w-[32rem] mx-auto snap-x snap-mandatory overflow-scroll">
+      @for (project of projects; track $index) {
+        <div
+          class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-8 rounded-xl border shadow-sm justify-center p-6"
+        >
+          <div class="flex flex-col">
+            <h3 class="text-3xl font-semibold">{{ project.name }}</h3>
+          </div>
+          <div class="flex flex-col gap-4">
+            <img
+              width="525"
+              height="350"
+              [alt]="project.name"
+              [src]="project.heroLink"
+              class="aspect-[3/2] overflow-hidden rounded-xl object-contain object-center"
+            />
+            <p>
+              {{ project.description }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <footer class="w-full max-w-4xl py-12 text-center border-t border-[#{{ color }}]">
+    <p class="text-gray-500">
+      © 2023 - Made with ❤️ by
       <a
         href="https://github.com/Til0r"
-        class="text-gray-600 ml-1"
+        class="text-[#{{ color }}] ml-1 font-bold"
         rel="noopener noreferrer"
         target="_blank"
         >til0r</a
       >
     </p>
-    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-      <a class="text-gray-500">
-        <svg
-          fill="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          class="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-        </svg>
-      </a>
-      <a class="ml-3 text-gray-500">
-        <svg
-          fill="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          class="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-          ></path>
-        </svg>
-      </a>
-      <a class="ml-3 text-gray-500">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          class="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-        </svg>
-      </a>
-      <a class="ml-3 text-gray-500">
-        <svg
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="0"
-          class="w-5 h-5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="none"
-            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-          ></path>
-          <circle cx="4" cy="4" r="2" stroke="none"></circle>
-        </svg>
-      </a>
-    </span>
-  </div>
-</footer>
+  </footer>
+</main>
