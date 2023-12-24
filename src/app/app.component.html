@@ -1,50 +1,54 @@
 <main class="flex flex-col gap-20 items-center">
-  <section class="intro md:p-36 py-20 bg-[#{{ color }}]">
+  <section class="intro md:p-36 py-20" [style]="'background-color: #' + color">
     <div class="flex gap-4 items-center justify-center max-w-4xl m-auto">
-      <!-- <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
-        <span class="flex h-full w-full items-center justify-center rounded-full bg-gray-100">
-          PO
-        </span>
-      </span> -->
       <div class="flex flex-col gap-2">
-        <div>
-          <h1 class="text-5xl font-bold text-white">John Smit</h1>
-          <p class="text-2xl text-white">Senior FrontEnd Developer</p>
-        </div>
-        <div class="flex flex-row gap-2 mx-auto items-center w-full">
-          @for (social of socials; track $index) {
-            <a [href]="social.link" target="_blank">
-              <img class="w-5" src="https://cdn.simpleicons.org/{{ social.name }}/fff" />
-            </a>
-          }
-        </div>
+        <h1 class="text-5xl font-bold text-white">John Smit</h1>
+        <p class="text-2xl text-white">Senior FrontEnd Developer</p>
+        @if (socials.length) {
+          <div class="flex flex-row gap-2 mx-auto items-center w-full">
+            @for (social of socials; track $index) {
+              <a [href]="social.redirect" target="_blank">
+                <img class="w-5" [src]="social.link" />
+              </a>
+            }
+          </div>
+        }
       </div>
     </div>
   </section>
 
   <section>
-    <h2 class="text-4xl font-bold italic">Skills</h2>
-    <div class="flex flex-wrap gap-4">
-      @for (badge of badges; track $index) {
-        <div
-          class="inline-flex items-center gap-2 justify-center rounded-full px-4 py-0.5 w-fit font-semibold text-xl bg-gray-100 hover:bg-gray-50 cursor-default"
-        >
-          <img class="w-5" src="https://cdn.simpleicons.org/{{ badge.iconName }}/{{ color }}" />
-          <div class="text-gray-700 capitalize">
-            {{ badge.name }}
+    <h2>Skills</h2>
+    <div class="flex flex-col gap-4">
+      @for (area of badges | keyvalue; track $index) {
+        @if (area.value.length) {
+          <h3>{{ area.key }}</h3>
+          <div class="flex flex-wrap gap-4">
+            @for (badge of area.value; track $index) {
+              <div
+                class="inline-flex items-center gap-2 justify-center rounded-2xl px-4 py-0.5 w-fit font-semibold border hover:border-gray-300 cursor-default"
+              >
+                <img class="w-5" [src]="badge.link" />
+                <div class="text-gray-700 capitalize">
+                  {{ badge.label }}
+                </div>
+              </div>
+            }
           </div>
-        </div>
+        }
       }
     </div>
   </section>
 
   <section>
-    <h2 class="text-4xl font-bold italic">Experience</h2>
+    <h2>Experience</h2>
     <div class="flex flex-col gap-4 items-center">
       @for (experience of experiences; track experience; let idx = $index) {
-        <div class="flex flex-col gap-8 rounded-2xl border shadow-sm w-full p-6">
+        <div
+          class="flex flex-col gap-8 rounded-2xl border hover:border-gray-300 shadow-sm w-full p-6"
+        >
           <div class="flex flex-col">
-            <h3 class="text-3xl font-semibold">{{ experience.title }} {{ idx }}</h3>
+            <h3>{{ experience.title }} {{ idx }}</h3>
             <p class="text-lg text-gray-600">{{ experience.company }}</p>
             @if (experience.date; as experienceDate) {
               <p class="text-sm text-gray-400">
@@ -61,14 +65,14 @@
   </section>
 
   <section>
-    <h2 class="text-4xl font-bold italic">Projects</h2>
+    <h2>Projects</h2>
     <div class="flex gap-4 md:w-[56rem] w-[32rem] mx-auto snap-x snap-mandatory overflow-scroll">
       @for (project of projects; track $index) {
         <div
-          class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-8 rounded-xl border shadow-sm justify-center p-6"
+          class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-8 rounded-2xl border shadow-sm justify-center p-6 hover:border-gray-300"
         >
           <div class="flex flex-col">
-            <h3 class="text-3xl font-semibold">{{ project.name }}</h3>
+            <h3>{{ project.name }}</h3>
           </div>
           <div class="flex flex-col gap-4">
             <img
@@ -76,7 +80,7 @@
               height="350"
               [alt]="project.name"
               [src]="project.heroLink"
-              class="aspect-[3/2] overflow-hidden rounded-xl object-contain object-center"
+              class="overflow-hidden rounded-2xl object-contain object-center"
             />
             <p>
               {{ project.description }}
@@ -87,16 +91,10 @@
     </div>
   </section>
 
-  <footer class="w-full max-w-4xl py-12 text-center border-t border-[#{{ color }}]">
-    <p class="text-gray-500">
+  <footer class="w-full py-12 text-center border-t" [style]="'background-color: #' + color">
+    <p class="text-white text-lg">
       © 2023 - Made with ❤️ by
-      <a
-        href="https://github.com/Til0r"
-        class="text-[#{{ color }}] ml-1 font-bold"
-        rel="noopener noreferrer"
-        target="_blank"
-        >til0r</a
-      >
+      <a href="https://github.com/Til0r" class="font-bold text-white" target="_blank">til0r</a>
     </p>
   </footer>
 </main>
