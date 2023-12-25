@@ -27,6 +27,9 @@
       "@open-profiler/models/*": [
         "./src/app/shared/models/*"
       ],
+      "@open-profiler/constants/*": [
+        "./src/app/shared/constants/*"
+      ],
       "@open-profiler/env/*": [
         "./src/environments/*"
       ]

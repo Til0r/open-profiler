@@ -1,0 +1,50 @@
+$size-of-icon: 1.4rem;
+$slider-offset: 0.3rem;
+$width-of-switch: 3.5rem;
+$height-of-switch: 2rem;
+
+.switchColorSchema *,
+.switchColorSchema ::after,
+.switchColorSchema ::before {
+  box-sizing: border-box;
+}
+
+.switchColorSchema {
+  .switch {
+    width: $width-of-switch;
+    height: $height-of-switch;
+  }
+
+  .slider {
+    transition: 0.4s;
+    background-color: #f4f4f5;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+    &:before {
+      top: 50%;
+      content: '';
+      transition: 0.4s;
+      position: absolute;
+      border-radius: 1rem;
+      width: $size-of-icon;
+      left: $slider-offset;
+      height: $size-of-icon;
+      transform: translateY(-50%);
+      background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+    }
+  }
+}
+
+.switchColorSchema {
+  & input:checked + .slider {
+    background-color: #1c1d1c;
+
+    &:before {
+      background: #1c1d1c;
+      left: calc(100% - 1.7rem);
+      box-shadow:
+        inset -3px -2px 5px -2px #8983f7,
+        inset -10px -4px 0 0 #a3dafb;
+    }
+  }
+}

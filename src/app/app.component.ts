@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ThemeConstant } from '@open-profiler/constants/theme.constant';
 import { environments } from '@open-profiler/env/environments';
 import { BadgesModel } from '@open-profiler/models/badges.model';
 import { ExperienceModel } from '@open-profiler/models/experience.model';
@@ -16,8 +17,11 @@ import { mapValues } from 'lodash';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  localStorage = localStorage;
+  ThemeConstant = ThemeConstant;
+
+  color = '881337';
   title = 'open-profiler';
-  color = '052e16';
 
   socials: IconModel[] = [
     { icon: 'linkedin', redirect: '#' },
@@ -176,6 +180,8 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    if (!localStorage.getItem(ThemeConstant.THEME)) this.switchColorSchema();
+
     this.socials = this.socials.map((social) => ({
       ...social,
       link: `${environments.simpleIcon}${social.icon}/fff`,
@@ -188,4 +194,25 @@ export class AppComponent implements OnInit {
       })),
     );
   }
+
+  private setDarkLightMode(): void {
+    const themeLocalStorage = this.getThemeLocalStorage();
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    document.documentElement.classList.toggle(
+      ThemeConstant.DARK,
+      themeLocalStorage === ThemeConstant.DARK || (!themeLocalStorage && prefersDarkMode),
+    );
+  }
+
+  protected switchColorSchema(): void {
+    const themeLocalStorage = this.getThemeLocalStorage();
+    const newTheme =
+      themeLocalStorage === ThemeConstant.LIGHT ? ThemeConstant.DARK : ThemeConstant.LIGHT;
+
+    localStorage.setItem(ThemeConstant.THEME, newTheme);
+    this.setDarkLightMode();
+  }
+
+  protected getThemeLocalStorage = (): string => localStorage.getItem(ThemeConstant.THEME) || '';
 }

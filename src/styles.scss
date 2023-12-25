@@ -15,8 +15,12 @@ body {
   font-family: 'Inter';
 }
 @layer components {
+  body {
+    @apply bg-[#f4f4f5] dark:bg-[#1c1d1c];
+  }
+
   section {
-    @apply w-full flex flex-col gap-8;
+    @apply w-full flex flex-col gap-4;
 
     &:not(.intro) {
       @apply max-w-4xl md:px-0 px-4;
@@ -24,10 +28,10 @@ body {
   }
 
   h2 {
-    @apply text-4xl font-bold italic text-gray-800;
+    @apply md:text-4xl text-2xl font-bold italic dark:text-white text-gray-800;
   }
 
   h3 {
-    @apply text-2xl font-semibold capitalize text-gray-700;
+    @apply md:text-2xl text-lg font-semibold capitalize dark:text-white text-gray-700;
   }
 }
