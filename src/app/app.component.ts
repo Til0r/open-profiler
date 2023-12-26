@@ -20,8 +20,10 @@ export class AppComponent implements OnInit {
   localStorage = localStorage;
   ThemeConstant = ThemeConstant;
 
+  name = 'John Smit';
+  role = 'Senior FrontEnd Developer';
+  currentYear = new Date().getFullYear();
   color = Math.floor(Math.random() * 16777215).toString(16);
-  title = 'open-profiler';
 
   socials: IconModel[] = [
     { icon: 'linkedin', redirect: '#' },

@@ -17,8 +17,14 @@
     </div>
     <div class="flex gap-4 items-center justify-center max-w-4xl md:m-auto">
       <div class="flex flex-col gap-2 text-center">
-        <h1 class="md:text-5xl text-3xl font-bold text-white">John Smit</h1>
-        <p class="md:text-2xl text-lg text-white">Senior FrontEnd Developer</p>
+        @if (name) {
+          <h1 class="md:text-5xl text-3xl font-bold text-white">{{ name }}</h1>
+        }
+
+        @if (role) {
+          <p class="md:text-2xl text-lg text-white">{{ role }}</p>
+        }
+
         @if (socials.length) {
           <div class="flex flex-row gap-2 mx-auto items-center w-full justify-center">
             @for (social of socials; track $index) {
@@ -32,81 +38,87 @@
     </div>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <div class="flex flex-col gap-4">
-      @for (area of badges | keyvalue; track $index) {
-        @if (area.value.length) {
-          <h3>{{ area.key }}</h3>
-          <div class="flex flex-wrap gap-4">
-            @for (badge of area.value; track $index) {
-              <div
-                class="inline-flex items-center gap-2 justify-center rounded-2xl px-4 py-1 w-fit font-semibold dark:bg-[#2c2c2c] bg-gray-50 cursor-default"
-              >
-                <img class="w-5" [src]="badge.link" [alt]="badge.label" />
-                <div class="dark:text-gray-100 text-gray-700 capitalize">
-                  {{ badge.label }}
+  @if ((badges | json) !== '{}') {
+    <section>
+      <h2>Skills</h2>
+      <div class="flex flex-col gap-4">
+        @for (area of badges | keyvalue; track $index) {
+          @if (area.value.length) {
+            <h3>{{ area.key }}</h3>
+            <div class="flex flex-wrap gap-4">
+              @for (badge of area.value; track $index) {
+                <div
+                  class="inline-flex items-center gap-2 justify-center rounded-2xl px-4 py-1 w-fit font-semibold dark:bg-[#2c2c2c] bg-gray-50 cursor-default"
+                >
+                  <img class="w-5" [src]="badge.link" [alt]="badge.label" />
+                  <div class="dark:text-gray-100 text-gray-700 capitalize">
+                    {{ badge.label }}
+                  </div>
                 </div>
-              </div>
-            }
+              }
+            </div>
+          }
+        }
+      </div>
+    </section>
+  }
+
+  @if (experiences.length) {
+    <section>
+      <h2>Experience</h2>
+      <div class="flex flex-col gap-4 items-center">
+        @for (experience of experiences; track experience; let idx = $index) {
+          <div
+            class="flex flex-col gap-8 rounded-2xl dark:bg-[#2c2c2c] bg-gray-50 shadow-sm w-full p-6"
+          >
+            <div class="flex flex-col">
+              <h3>{{ experience.title }} {{ idx }}</h3>
+              <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
+              @if (experience.date; as experienceDate) {
+                <p class="text-sm dark:text-gray-300 text-gray-400">
+                  {{ experienceDate.start }} - {{ experienceDate.end }}
+                </p>
+              }
+            </div>
+            <div class="dark:text-white text-gray-600">
+              <p>{{ experience.description }}</p>
+            </div>
           </div>
         }
-      }
-    </div>
-  </section>
+      </div>
+    </section>
+  }
 
-  <section>
-    <h2>Experience</h2>
-    <div class="flex flex-col gap-4 items-center">
-      @for (experience of experiences; track experience; let idx = $index) {
-        <div
-          class="flex flex-col gap-8 rounded-2xl border hover:border-gray-300 shadow-sm w-full p-6"
-        >
-          <div class="flex flex-col">
-            <h3>{{ experience.title }} {{ idx }}</h3>
-            <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
-            @if (experience.date; as experienceDate) {
-              <p class="text-sm dark:text-gray-300 text-gray-400">
-                {{ experienceDate.start }} - {{ experienceDate.end }}
+  @if (projects.length) {
+    <section>
+      <h2>Projects</h2>
+      <div class="flex gap-4 md:w-[56rem] w-[20rem] mx-auto snap-x snap-mandatory overflow-scroll">
+        @for (project of projects; track $index) {
+          <div
+            class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-8 rounded-2xl shadow-sm justify-center p-6 dark:bg-[#2c2c2c] bg-gray-50"
+          >
+            <div class="flex flex-col">
+              <h3>{{ project.name }}</h3>
+            </div>
+            <div class="flex flex-col gap-4">
+              <img
+                [alt]="project.name"
+                [src]="project.heroLink"
+                class="overflow-hidden rounded-2xl object-contain object-center"
+              />
+              <p class="dark:text-white text-gray-600">
+                {{ project.description }}
               </p>
-            }
+            </div>
           </div>
-          <div class="dark:text-white text-gray-600">
-            <p>{{ experience.description }}</p>
-          </div>
-        </div>
-      }
-    </div>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="flex gap-4 md:w-[56rem] w-[20rem] mx-auto snap-x snap-mandatory overflow-scroll">
-      @for (project of projects; track $index) {
-        <div
-          class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-8 rounded-2xl border shadow-sm justify-center p-6 hover:border-gray-300"
-        >
-          <div class="flex flex-col">
-            <h3>{{ project.name }}</h3>
-          </div>
-          <div class="flex flex-col gap-4">
-            <img
-              [alt]="project.name"
-              [src]="project.heroLink"
-              class="overflow-hidden rounded-2xl object-contain object-center"
-            />
-            <p class="dark:text-white text-gray-600">
-              {{ project.description }}
-            </p>
-          </div>
-        </div>
-      }
-    </div>
-  </section>
+        }
+      </div>
+    </section>
+  }
 
   <footer class="w-full py-12 text-center" [style]="'background-color: #' + color">
     <p class="text-white md:text-lg">
-      © 2023 - Made with ❤️ by
+      © {{ currentYear }} - Made with ❤️ by
       <a href="https://github.com/Til0r" class="font-bold text-white" target="_blank">til0r</a>
     </p>
   </footer>
