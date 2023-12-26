@@ -16,7 +16,7 @@ body {
 }
 @layer components {
   body {
-    @apply bg-[#f4f4f5] dark:bg-[#1c1d1c];
+    @apply bg-[#f4f4f5] dark:bg-[#333333];
   }
 
   section {
@@ -28,10 +28,10 @@ body {
   }
 
   h2 {
-    @apply md:text-4xl text-2xl font-bold italic dark:text-white text-gray-800;
+    @apply md:text-4xl text-2xl font-bold italic dark:text-gray-100 text-gray-800;
   }
 
   h3 {
-    @apply md:text-2xl text-lg font-semibold capitalize dark:text-white text-gray-700;
+    @apply md:text-2xl text-lg font-semibold capitalize dark:text-gray-200 text-gray-700;
   }
 }

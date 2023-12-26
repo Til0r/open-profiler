@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   localStorage = localStorage;
   ThemeConstant = ThemeConstant;
 
-  color = '881337';
+  color = Math.floor(Math.random() * 16777215).toString(16);
   title = 'open-profiler';
 
   socials: IconModel[] = [

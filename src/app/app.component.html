@@ -41,7 +41,7 @@
           <div class="flex flex-wrap gap-4">
             @for (badge of area.value; track $index) {
               <div
-                class="inline-flex items-center gap-2 justify-center rounded-2xl px-4 py-0.5 w-fit font-semibold border hover:border-gray-300 cursor-default"
+                class="inline-flex items-center gap-2 justify-center rounded-2xl px-4 py-1 w-fit font-semibold dark:bg-[#2c2c2c] bg-gray-50 cursor-default"
               >
                 <img class="w-5" [src]="badge.link" [alt]="badge.label" />
                 <div class="dark:text-gray-100 text-gray-700 capitalize">
@@ -64,9 +64,9 @@
         >
           <div class="flex flex-col">
             <h3>{{ experience.title }} {{ idx }}</h3>
-            <p class="text-lg dark:text-white text-gray-600">{{ experience.company }}</p>
+            <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
             @if (experience.date; as experienceDate) {
-              <p class="text-sm dark:text-white text-gray-400">
+              <p class="text-sm dark:text-gray-300 text-gray-400">
                 {{ experienceDate.start }} - {{ experienceDate.end }}
               </p>
             }
