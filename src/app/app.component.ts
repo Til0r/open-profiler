@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeConstant } from '@open-profiler/constants/theme.constant';
@@ -12,7 +12,7 @@ import { mapValues } from 'lodash';
 @Component({
   selector: 'open-profiler-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
