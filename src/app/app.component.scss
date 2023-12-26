@@ -4,13 +4,13 @@ $height-of-switch: 2rem;
 $width-of-switch: 3.5rem;
 $slider-checked-dark: #333333;
 
-.switchColorSchema *,
-.switchColorSchema ::after,
-.switchColorSchema ::before {
+.switchColorScheme *,
+.switchColorScheme ::after,
+.switchColorScheme ::before {
   box-sizing: border-box;
 }
 
-.switchColorSchema {
+.switchColorScheme {
   .switch {
     width: $width-of-switch;
     height: $height-of-switch;
@@ -36,7 +36,7 @@ $slider-checked-dark: #333333;
   }
 }
 
-.switchColorSchema {
+.switchColorScheme {
   & input:checked + .slider {
     background-color: $slider-checked-dark;
 

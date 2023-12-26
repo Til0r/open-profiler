@@ -180,7 +180,19 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    if (!localStorage.getItem(ThemeConstant.THEME)) this.switchColorSchema();
+    const themeLocalStorage = this.getThemeLocalStorage();
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (!themeLocalStorage) {
+      localStorage.setItem(
+        ThemeConstant.THEME,
+        prefersDarkMode ? ThemeConstant.DARK : ThemeConstant.LIGHT,
+      );
+    }
+
+    this.toggleColorScheme(
+      themeLocalStorage || (prefersDarkMode ? ThemeConstant.DARK : ThemeConstant.LIGHT),
+    );
 
     this.socials = this.socials.map((social) => ({
       ...social,
@@ -195,23 +207,21 @@ export class AppComponent implements OnInit {
     );
   }
 
-  private setDarkLightMode(): void {
+  protected switchColorScheme(): void {
     const themeLocalStorage = this.getThemeLocalStorage();
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    document.documentElement.classList.toggle(
-      ThemeConstant.DARK,
-      themeLocalStorage === ThemeConstant.DARK || (!themeLocalStorage && prefersDarkMode),
-    );
-  }
-
-  protected switchColorSchema(): void {
-    const themeLocalStorage = this.getThemeLocalStorage();
     const newTheme =
       themeLocalStorage === ThemeConstant.LIGHT ? ThemeConstant.DARK : ThemeConstant.LIGHT;
-
     localStorage.setItem(ThemeConstant.THEME, newTheme);
-    this.setDarkLightMode();
+
+    this.toggleColorScheme(newTheme);
+  }
+
+  private toggleColorScheme(currentTheme: string): void {
+    document.documentElement.classList.toggle(
+      ThemeConstant.DARK,
+      currentTheme === ThemeConstant.DARK,
+    );
   }
 
   protected getThemeLocalStorage = (): string => localStorage.getItem(ThemeConstant.THEME) || '';
