@@ -30,6 +30,9 @@
       "@open-profiler/constants/*": [
         "./src/app/shared/constants/*"
       ],
+      "@open-profiler/config/*": [
+        "./src/app/shared/config/*"
+      ],
       "@open-profiler/env/*": [
         "./src/environments/*"
       ]
