@@ -88,7 +88,13 @@
                 <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
                 @if (experience.date; as experienceDate) {
                   <p class="text-sm dark:text-gray-300 text-gray-400">
-                    {{ experienceDate.start }} - {{ experienceDate.end }}
+                    {{ experienceDate.start | date: 'dd/yyyy' }}
+
+                    @if (experienceDate.end; as experienceDateEnd) {
+                      - {{ experienceDateEnd | date: 'dd/yyyy' }}
+                    } @else {
+                      - Present
+                    }
                   </p>
                 }
               </div>
