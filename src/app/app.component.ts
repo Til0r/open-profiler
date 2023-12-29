@@ -5,6 +5,7 @@ import { openProfilerConfig } from '@open-profiler/config/open-profiler.config';
 import { ThemeConstant } from '@open-profiler/constants/theme.constant';
 import { environments } from '@open-profiler/env/environments';
 import { BadgeModel } from '@open-profiler/models/badge.model';
+import { BadgesModel } from '@open-profiler/models/badges.model';
 import { BaseModel } from '@open-profiler/models/base.model';
 import { ExperienceModel } from '@open-profiler/models/experience.model';
 import { mapValues } from 'lodash';
@@ -32,14 +33,14 @@ export class AppComponent implements OnInit {
     this.openProfilerConfig = mapValues(openProfilerConfig, (config, key) => {
       if (key === 'base') {
         return {
-          ...config,
+          ...(config as BaseModel),
           socials: (config as BaseModel).socials.map((social) => ({
             ...social,
             link: `${environments.simpleIcon}${social.icon}/fff`,
           })),
         };
       } else if (key === 'badges') {
-        return mapValues(config, (area) =>
+        return mapValues(config as BadgesModel, (area) =>
           (area as BadgeModel[]).map((badge) => ({
             ...badge,
             link: `${environments.simpleIcon}${badge.icon}/${this.color}`,

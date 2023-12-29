@@ -12,6 +12,8 @@ export const openProfilerConfig: OpenProfilerModel = {
       { icon: 'medium', redirect: '#' },
     ],
   },
+  about:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis auctor eros, non eleifend felis. Suspendisse non semper massa, et ornare lacus. Proin efficitur id lectus sed tristique. Duis velit lacus, iaculis a auctor eu, sodales in erat. Duis blandit nec velit vitae interdum. Sed maximus non ipsum aliquet fringilla. Donec a egestas nibh, vitae ullamcorper sem. Aenean tincidunt massa quis ullamcorper varius. Morbi feugiat lacus tellus, eget venenatis nulla dignissim a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque accumsan posuere facilisis. Praesent in convallis urna. Integer vulputate justo ut nisi faucibus, id volutpat eros tincidunt. Mauris vel ex dictum augue pretium pretium ornare id orci. Curabitur tincidunt mi ut scelerisque rutrum. Duis pulvinar et est quis accumsan.',
   badges: {
     frontend: [
       { label: 'angular', icon: 'angular' },
