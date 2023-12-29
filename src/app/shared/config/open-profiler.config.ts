@@ -48,6 +48,11 @@ export const openProfilerConfig: OpenProfilerModel = {
         start: '01/02/2020',
       },
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      badges: [
+        { label: 'socket.io', icon: 'socket.io' },
+        { label: 'python', icon: 'python' },
+        { label: 'flask', icon: 'flask' },
+      ],
     },
     {
       title: 'Experience',
@@ -83,33 +88,11 @@ export const openProfilerConfig: OpenProfilerModel = {
         end: '01/03/2023',
         start: '01/02/2020',
       },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    },
-    {
-      title: 'Experience',
-      company: 'Hooli',
-      date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
-      },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    },
-    {
-      title: 'Experience',
-      company: 'Hooli',
-      date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
-      },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    },
-    {
-      title: 'Experience',
-      company: 'Hooli',
-      date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
-      },
+      badges: [
+        { label: 'socket.io', icon: 'socket.io' },
+        { label: 'python', icon: 'python' },
+        { label: 'flask', icon: 'flask' },
+      ],
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
   ],

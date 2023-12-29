@@ -53,20 +53,11 @@
           @for (area of badges | keyvalue; track $index) {
             @if (area.value.length) {
               <h3>{{ area.key }}</h3>
-              <div class="flex flex-wrap gap-4">
-                @for (badge of area.value; track $index) {
-                  <div
-                    class="inline-flex items-center gap-2 justify-center rounded-2xl px-4 py-1 w-fit font-semibold dark:bg-[#2c2c2c] bg-gray-50 cursor-default"
-                  >
-                    @if (badge.link) {
-                      <img width="20" height="20" [alt]="badge.label" [ngSrc]="badge.link" />
-                    }
-                    <div class="dark:text-gray-100 text-gray-700 capitalize">
-                      {{ badge.label }}
-                    </div>
-                  </div>
-                }
-              </div>
+              <ng-container
+                [ngTemplateOutlet]="badgesTemplate"
+                [ngTemplateOutletContext]="{ list: area.value }"
+              >
+              </ng-container>
             }
           }
         </div>
@@ -81,7 +72,7 @@
         <div class="flex flex-col gap-4 items-center">
           @for (experience of experiences; track experience; let idx = $index) {
             <div
-              class="flex flex-col gap-8 rounded-2xl dark:bg-[#2c2c2c] bg-gray-50 shadow-sm w-full p-6"
+              class="flex flex-col gap-4 rounded-2xl dark:bg-[#2c2c2c] bg-gray-50 shadow-sm w-full p-6"
             >
               <div class="flex flex-col">
                 <h3>{{ experience.title }} {{ idx }}</h3>
@@ -98,6 +89,15 @@
                   </p>
                 }
               </div>
+
+              @if (experience?.badges?.length) {
+                <ng-container
+                  [ngTemplateOutlet]="badgesTemplate"
+                  [ngTemplateOutletContext]="{ list: experience.badges, bgSecondLevel: true }"
+                >
+                </ng-container>
+              }
+
               <div class="dark:text-white text-gray-600">
                 <p>{{ experience.description }}</p>
               </div>
@@ -151,3 +151,33 @@
     </p>
   </footer>
 </main>
+
+<ng-template #badgesTemplate let-list="list" let-bgSecondLevel="bgSecondLevel">
+  <div class="flex flex-wrap gap-4">
+    @for (badge of list; track $index) {
+      <div
+        class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 w-fit font-semibold cursor-default"
+        [class]="
+          !bgSecondLevel
+            ? 'dark:bg-[#2c2c2c] bg-gray-50 px-2'
+            : 'dark:bg-[#262626] bg-[#f4f4f5] px-4'
+        "
+      >
+        @if (badge.link) {
+          <img
+            [alt]="badge.label"
+            [ngSrc]="badge.link"
+            [width]="bgSecondLevel ? 20 : 15"
+            [height]="bgSecondLevel ? 20 : 15"
+          />
+        }
+        <div
+          class="dark:text-gray-100 text-gray-700 capitalize"
+          [class]="bgSecondLevel ? 'text-sm' : ''"
+        >
+          {{ badge.label }}
+        </div>
+      </div>
+    }
+  </div>
+</ng-template>

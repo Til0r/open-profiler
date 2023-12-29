@@ -1,3 +1,5 @@
+import { BadgeModel } from './badge.model';
+
 export interface ExperienceModel {
   title: string;
   company: string;
@@ -6,4 +8,5 @@ export interface ExperienceModel {
     start: string;
   };
   description: string;
+  badges?: BadgeModel[];
 }

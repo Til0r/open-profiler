@@ -6,6 +6,7 @@ import { ThemeConstant } from '@open-profiler/constants/theme.constant';
 import { environments } from '@open-profiler/env/environments';
 import { BadgeModel } from '@open-profiler/models/badge.model';
 import { BaseModel } from '@open-profiler/models/base.model';
+import { ExperienceModel } from '@open-profiler/models/experience.model';
 import { mapValues } from 'lodash';
 
 @Component({
@@ -44,7 +45,18 @@ export class AppComponent implements OnInit {
             link: `${environments.simpleIcon}${badge.icon}/${this.color}`,
           })),
         );
+      } else if (key === 'experiences') {
+        return (config as ExperienceModel[]).map((experience) => ({
+          ...experience,
+          ...('badges' in experience && {
+            badges: experience?.badges?.map((badge) => ({
+              ...badge,
+              link: `${environments.simpleIcon}${badge.icon}/${this.color}`,
+            })),
+          }),
+        }));
       }
+
       return config;
     }) as never;
   }
