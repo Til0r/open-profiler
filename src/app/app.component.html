@@ -56,6 +56,15 @@
     </section>
   }
 
+  @if (openProfilerConfig.education; as education) {
+    @if (education.length) {
+      <section>
+        <h2>Education</h2>
+        <open-profiler-experience [experiences]="education"></open-profiler-experience>
+      </section>
+    }
+  }
+
   @if (openProfilerConfig.badges; as badges) {
     @if ((badges | json) !== '{}') {
       <section>
@@ -64,11 +73,7 @@
           @for (area of badges | keyvalue; track $index) {
             @if (area.value.length) {
               <h3>{{ area.key }}</h3>
-              <ng-container
-                [ngTemplateOutlet]="badgesTemplate"
-                [ngTemplateOutletContext]="{ list: area.value }"
-              >
-              </ng-container>
+              <open-profiler-badges [list]="area.value"></open-profiler-badges>
             }
           }
         </div>
@@ -80,41 +85,7 @@
     @if (experiences.length) {
       <section>
         <h2>Experience</h2>
-        <div class="flex flex-col gap-4 items-center">
-          @for (experience of experiences; track experience; let idx = $index) {
-            <div
-              class="flex flex-col gap-4 rounded-2xl dark:bg-[#2c2c2c] bg-gray-50 shadow-sm w-full p-6"
-            >
-              <div class="flex flex-col">
-                <h3>{{ experience.title }} {{ idx }}</h3>
-                <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
-                @if (experience.date; as experienceDate) {
-                  <p class="text-sm dark:text-gray-300 text-gray-400">
-                    {{ experienceDate.start | date: 'dd/yyyy' }}
-
-                    @if (experienceDate.end; as experienceDateEnd) {
-                      - {{ experienceDateEnd | date: 'dd/yyyy' }}
-                    } @else {
-                      - Present
-                    }
-                  </p>
-                }
-              </div>
-
-              @if (experience?.badges?.length) {
-                <ng-container
-                  [ngTemplateOutlet]="badgesTemplate"
-                  [ngTemplateOutletContext]="{ list: experience.badges, bgSecondLevel: true }"
-                >
-                </ng-container>
-              }
-
-              <div class="dark:text-white text-gray-600">
-                <p>{{ experience.description }}</p>
-              </div>
-            </div>
-          }
-        </div>
+        <open-profiler-experience [experiences]="experiences"></open-profiler-experience>
       </section>
     }
   }
@@ -179,33 +150,3 @@
     </p>
   </footer>
 </main>
-
-<ng-template #badgesTemplate let-list="list" let-bgSecondLevel="bgSecondLevel">
-  <div class="flex flex-wrap gap-4">
-    @for (badge of list; track $index) {
-      <div
-        class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 w-fit font-semibold cursor-default"
-        [class]="
-          !bgSecondLevel
-            ? 'dark:bg-[#2c2c2c] bg-gray-50 px-2'
-            : 'dark:bg-[#262626] bg-[#f4f4f5] px-4'
-        "
-      >
-        @if (badge.link) {
-          <img
-            [alt]="badge.label"
-            [ngSrc]="badge.link"
-            [width]="bgSecondLevel ? 20 : 15"
-            [height]="bgSecondLevel ? 20 : 15"
-          />
-        }
-        <div
-          class="dark:text-gray-100 text-gray-700 capitalize"
-          [class]="bgSecondLevel ? 'text-sm' : ''"
-        >
-          {{ badge.label }}
-        </div>
-      </div>
-    }
-  </div>
-</ng-template>

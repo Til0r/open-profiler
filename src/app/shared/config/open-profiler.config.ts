@@ -145,4 +145,24 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis auctor eros, non eleifend felis. Suspendisse non semper massa, et ornare lacus.',
   },
+  education: [
+    {
+      title: 'Education',
+      company: 'Hooli',
+      date: {
+        end: '01/03/2023',
+        start: '01/02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    {
+      title: 'Education',
+      company: 'Hooli',
+      date: {
+        end: '01/03/2023',
+        start: '01/02/2020',
+      },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+  ],
 };

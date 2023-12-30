@@ -33,6 +33,9 @@
       "@open-profiler/config/*": [
         "./src/app/shared/config/*"
       ],
+      "@open-profiler/elements/*": [
+        "./src/app/shared/elements/*"
+      ],
       "@open-profiler/env/*": [
         "./src/environments/*"
       ]

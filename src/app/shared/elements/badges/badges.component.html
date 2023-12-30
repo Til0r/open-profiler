@@ -1,0 +1,29 @@
+@if (list && list.length) {
+  <div class="flex flex-wrap gap-4">
+    @for (badge of list; track $index) {
+      <div
+        class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 w-fit font-semibold cursor-default"
+        [class]="
+          !bgSecondLevel
+            ? 'dark:bg-[#2c2c2c] bg-gray-50 px-2'
+            : 'dark:bg-[#262626] bg-[#f4f4f5] px-4'
+        "
+      >
+        @if (badge.link) {
+          <img
+            [alt]="badge.label"
+            [ngSrc]="badge.link"
+            [width]="bgSecondLevel ? 20 : 15"
+            [height]="bgSecondLevel ? 20 : 15"
+          />
+        }
+        <div
+          class="dark:text-gray-100 text-gray-700 capitalize"
+          [class]="bgSecondLevel ? 'text-sm' : ''"
+        >
+          {{ badge.label }}
+        </div>
+      </div>
+    }
+  </div>
+}

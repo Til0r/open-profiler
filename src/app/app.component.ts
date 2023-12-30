@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { openProfilerConfig } from '@open-profiler/config/open-profiler.config';
 import { ThemeConstant } from '@open-profiler/constants/theme.constant';
+import { BadgesComponent } from '@open-profiler/elements/badges/badges.component';
+import { ExperienceComponent } from '@open-profiler/elements/experience/experience.component';
 import { environments } from '@open-profiler/env/environments';
 import { BadgeModel } from '@open-profiler/models/badge.model';
 import { BadgesModel } from '@open-profiler/models/badges.model';
@@ -11,11 +13,11 @@ import { ExperienceModel } from '@open-profiler/models/experience.model';
 import { mapValues } from 'lodash';
 
 @Component({
-  selector: 'open-profiler-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NgOptimizedImage],
-  templateUrl: './app.component.html',
+  selector: 'open-profiler-root',
   styleUrl: './app.component.scss',
+  templateUrl: './app.component.html',
+  imports: [CommonModule, RouterOutlet, NgOptimizedImage, BadgesComponent, ExperienceComponent],
 })
 export class AppComponent implements OnInit {
   localStorage = localStorage;

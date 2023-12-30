@@ -1,0 +1,35 @@
+<div class="flex flex-col gap-4 items-center">
+  @for (experience of experiences; track $index) {
+    <div
+      class="flex flex-col gap-4 rounded-2xl w-full p-6"
+      [class]="!flatBackground ? '' : 'dark:bg-[#2c2c2c] bg-gray-50 shadow-sm'"
+    >
+      <div class="flex flex-col">
+        <h3>{{ experience.title }}</h3>
+        <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
+        @if (experience.date; as experienceDate) {
+          <p class="text-sm dark:text-gray-300 text-gray-400">
+            {{ experienceDate.start | date: 'dd/yyyy' }}
+
+            @if (experienceDate.end; as experienceDateEnd) {
+              - {{ experienceDateEnd | date: 'dd/yyyy' }}
+            } @else {
+              - Present
+            }
+          </p>
+        }
+      </div>
+
+      @if (experience?.badges?.length) {
+        <open-profiler-badges
+          [bgSecondLevel]="true"
+          [list]="experience.badges"
+        ></open-profiler-badges>
+      }
+
+      <div class="dark:text-white text-gray-600">
+        <p>{{ experience.description }}</p>
+      </div>
+    </div>
+  }
+</div>

@@ -10,5 +10,6 @@ export interface OpenProfilerModel {
   badges: BadgesModel;
   contact: ContactModel;
   projects: ProjectModel[];
+  education: ExperienceModel[];
   experiences: ExperienceModel[];
 }
