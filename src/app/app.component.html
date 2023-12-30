@@ -153,6 +153,23 @@
     }
   }
 
+  @if (openProfilerConfig.contact; as contact) {
+    <section>
+      <h2>Contact</h2>
+      <div class="flex flex-row gap-4">
+        <p class="dark:text-gray-300 text-gray-600">
+          {{ contact.description }}
+        </p>
+        <button
+          [style]="'background-color: #' + color"
+          class="inline-flex items-center justify-center rounded-2xl px-4 py-2 text-white opacity-75 hover:opacity-100"
+        >
+          <a href="mailto::{{ contact.mail }}"> Contact </a>
+        </button>
+      </div>
+    </section>
+  }
+
   <footer class="w-full py-12 text-center" [style]="'background-color: #' + color">
     <p class="text-white md:text-lg">
       © {{ currentYear }} - Made with ❤️ by

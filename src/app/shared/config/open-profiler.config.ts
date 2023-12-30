@@ -1,6 +1,6 @@
 import { OpenProfilerModel } from '@open-profiler/models/open-profiler.model';
 
-export const openProfilerConfig: OpenProfilerModel = {
+export const openProfilerConfig: Partial<OpenProfilerModel> = {
   base: {
     name: 'John Smit',
     role: 'Senior FrontEnd Developer',
@@ -140,4 +140,9 @@ export const openProfilerConfig: OpenProfilerModel = {
       heroLink: './assets/project.jpg',
     },
   ],
+  contact: {
+    mail: 'mail@mail.com',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis auctor eros, non eleifend felis. Suspendisse non semper massa, et ornare lacus.',
+  },
 };
