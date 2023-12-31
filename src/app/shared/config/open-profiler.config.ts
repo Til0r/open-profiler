@@ -1,6 +1,7 @@
 import { OpenProfilerModel } from '@open-profiler/models/open-profiler.model';
 
 export const openProfilerConfig: Partial<OpenProfilerModel> = {
+  color: '11843b',
   base: {
     name: 'John Smit',
     role: 'Senior FrontEnd Developer',

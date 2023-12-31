@@ -1,5 +1,5 @@
 <main class="flex flex-col md:gap-20 gap-10 items-center">
-  <section class="intro md:p-36 py-20" [style]="'background-color: #' + color">
+  <section class="intro md:p-36 py-20" [style]="'background-color: #' + openProfilerConfig.color">
     <div class="absolute right-4 top-4 text-white cursor-pointer">
       <div class="switchColorScheme">
         <label class="switch inline-block relative">
@@ -132,7 +132,7 @@
           {{ contact.description }}
         </p>
         <button
-          [style]="'background-color: #' + color"
+          [style]="'background-color: #' + openProfilerConfig.color"
           class="inline-flex items-center justify-center rounded-2xl px-4 py-2 text-white opacity-75 hover:opacity-100"
         >
           <a href="mailto::{{ contact.mail }}"> Contact </a>
@@ -141,7 +141,10 @@
     </section>
   }
 
-  <footer class="w-full py-12 text-center" [style]="'background-color: #' + color">
+  <footer
+    class="w-full py-12 text-center"
+    [style]="'background-color: #' + openProfilerConfig.color"
+  >
     <p class="text-white md:text-lg">
       © {{ currentYear }} - Made with ❤️ by
       <a href="https://github.com/til0r/open-profiler" class="font-bold text-white" target="_blank">

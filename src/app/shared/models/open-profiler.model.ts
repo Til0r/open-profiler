@@ -5,6 +5,7 @@ import { ExperienceModel } from './experience.model';
 import { ProjectModel } from './project.model';
 
 export interface OpenProfilerModel {
+  color: string;
   about: string;
   base: BaseModel;
   badges: BadgesModel;

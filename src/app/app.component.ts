@@ -25,12 +25,17 @@ export class AppComponent implements OnInit {
   openProfilerConfig = openProfilerConfig;
 
   currentYear = new Date().getFullYear();
-  color = Math.floor(Math.random() * 16777215).toString(16);
 
   constructor() {}
 
   ngOnInit(): void {
     this.initColorScheme();
+
+    let color = openProfilerConfig.color;
+    if (!color) {
+      color = '11843b';
+      Object.assign(openProfilerConfig, { color });
+    }
 
     this.openProfilerConfig = mapValues(openProfilerConfig, (config, key) => {
       if (key === 'base') {
@@ -45,7 +50,7 @@ export class AppComponent implements OnInit {
         return mapValues(config as BadgesModel, (area) =>
           (area as BadgeModel[]).map((badge) => ({
             ...badge,
-            link: `${environments.simpleIcon}${badge.icon}/${this.color}`,
+            link: `${environments.simpleIcon}${badge.icon}/${color}`,
           })),
         );
       } else if (key === 'experiences') {
@@ -54,7 +59,7 @@ export class AppComponent implements OnInit {
           ...('badges' in experience && {
             badges: experience?.badges?.map((badge) => ({
               ...badge,
-              link: `${environments.simpleIcon}${badge.icon}/${this.color}`,
+              link: `${environments.simpleIcon}${badge.icon}/${color}`,
             })),
           }),
         }));
