@@ -27,19 +27,7 @@
             <p class="md:text-2xl text-lg text-white">{{ role }}</p>
           }
 
-          @if (base.socials; as socials) {
-            @if (socials.length) {
-              <div class="flex flex-row gap-2 mx-auto items-center w-full justify-center">
-                @for (social of socials; track $index) {
-                  @if (social.link) {
-                    <a [href]="social.redirect" target="_blank">
-                      <img width="20" height="20" [alt]="social.icon" [ngSrc]="social.link" />
-                    </a>
-                  }
-                }
-              </div>
-            }
-          }
+          <open-profiler-socials [socials]="base.socials"></open-profiler-socials>
         </div>
       </div>
     }

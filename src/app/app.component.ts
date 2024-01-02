@@ -5,6 +5,7 @@ import { openProfilerConfig } from '@open-profiler/config/open-profiler.config';
 import { ThemeConstant } from '@open-profiler/constants/theme.constant';
 import { BadgesComponent } from '@open-profiler/elements/badges/badges.component';
 import { ExperienceComponent } from '@open-profiler/elements/experience/experience.component';
+import { SocialsComponent } from '@open-profiler/elements/socials/socials.component';
 import { environments } from '@open-profiler/env/environments';
 import { BadgeModel } from '@open-profiler/models/badge.model';
 import { BadgesModel } from '@open-profiler/models/badges.model';
@@ -17,7 +18,14 @@ import { mapValues } from 'lodash';
   selector: 'open-profiler-root',
   styleUrl: './app.component.scss',
   templateUrl: './app.component.html',
-  imports: [CommonModule, RouterOutlet, NgOptimizedImage, BadgesComponent, ExperienceComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NgOptimizedImage,
+    BadgesComponent,
+    ExperienceComponent,
+    SocialsComponent,
+  ],
 })
 export class AppComponent implements OnInit {
   localStorage = localStorage;
