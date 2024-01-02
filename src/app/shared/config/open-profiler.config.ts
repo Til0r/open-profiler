@@ -3,18 +3,18 @@ import { OpenProfilerModel } from '@open-profiler/models/open-profiler.model';
 export const openProfilerConfig: Partial<OpenProfilerModel> = {
   color: '11843b',
   base: {
-    name: 'John Smit',
-    role: 'Senior FrontEnd Developer',
+    name: 'Jane Doe',
+    role: 'Full Stack Developer',
     socials: [
-      { icon: 'linkedin', redirect: '#' },
-      { icon: 'twitter', redirect: '#' },
-      { icon: 'github', redirect: '#' },
-      { icon: 'gitlab', redirect: '#' },
-      { icon: 'medium', redirect: '#' },
+      { icon: 'linkedin', redirect: 'https://www.linkedin.com/janedoe' },
+      { icon: 'twitter', redirect: 'https://twitter.com/janedoe' },
+      { icon: 'github', redirect: 'https://github.com/janedoe' },
+      { icon: 'gitlab', redirect: 'https://gitlab.com/janedoe' },
+      { icon: 'medium', redirect: 'https://medium.com/@janedoe' },
     ],
   },
   about:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis auctor eros, non eleifend felis. Suspendisse non semper massa, et ornare lacus. Proin efficitur id lectus sed tristique. Duis velit lacus, iaculis a auctor eu, sodales in erat. Duis blandit nec velit vitae interdum. Sed maximus non ipsum aliquet fringilla. Donec a egestas nibh, vitae ullamcorper sem. Aenean tincidunt massa quis ullamcorper varius. Morbi feugiat lacus tellus, eget venenatis nulla dignissim a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque accumsan posuere facilisis. Praesent in convallis urna. Integer vulputate justo ut nisi faucibus, id volutpat eros tincidunt. Mauris vel ex dictum augue pretium pretium ornare id orci. Curabitur tincidunt mi ut scelerisque rutrum. Duis pulvinar et est quis accumsan.',
+    'Passionate and results-driven Full Stack Developer with expertise in building scalable web applications. Proven track record of delivering high-quality software solutions in fast-paced environments.',
   badges: {
     frontend: [
       { label: 'angular', icon: 'angular' },
@@ -23,20 +23,17 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
       { label: 'tailwindcss', icon: 'tailwindcss' },
       { label: 'bootstrap', icon: 'bootstrap' },
       { label: 'redux', icon: 'redux' },
-      { label: 'electron', icon: 'Electron' },
       { label: 'npm', icon: 'npm' },
-      { label: 'Ionic', icon: 'Ionic' },
-      { label: 'socket.io', icon: 'socket.io' },
       { label: 'webpack', icon: 'webpack' },
-      { label: 'web3.js', icon: 'web3.js' },
+      { label: 'graphql', icon: 'graphql' },
       { label: 'Firebase', icon: 'Firebase' },
     ],
     backend: [
-      { label: 'socket.io', icon: 'socket.io' },
+      { label: 'nodejs', icon: 'nodedotjs' },
       { label: 'python', icon: 'python' },
+      { label: 'django', icon: 'django' },
       { label: 'flask', icon: 'flask' },
-      { label: 'web3.js', icon: 'web3.js' },
-      { label: 'solidity', icon: 'solidity' },
+      { label: 'mongodb', icon: 'mongodb' },
       { label: 'mysql', icon: 'mysql' },
       { label: 'docker', icon: 'docker' },
     ],
@@ -44,126 +41,69 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
   },
   experiences: [
     {
-      title: 'Experience',
-      company: 'Hooli',
+      title: 'Senior Developer',
+      company: 'TechCo',
       date: {
-        end: '',
-        start: '01/02/2020',
+        end: '01/03/2022',
+        start: '01/02/2019',
       },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description:
+        'Led a team of developers in the successful delivery of multiple web applications.',
       badges: [
-        { label: 'socket.io', icon: 'socket.io' },
-        { label: 'python', icon: 'python' },
-        { label: 'flask', icon: 'flask' },
+        { label: 'angular', icon: 'angular' },
+        { label: 'nodejs', icon: 'nodedotjs' },
+        { label: 'docker', icon: 'docker' },
       ],
     },
     {
-      title: 'Experience',
-      company: 'Hooli',
+      title: 'Software Engineer',
+      company: 'InnoCorp',
       date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
+        end: '01/03/2019',
+        start: '01/02/2017',
       },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    },
-    {
-      title: 'Experience',
-      company: 'Hooli',
-      date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
-      },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    },
-    {
-      title: 'Experience',
-      company: 'Hooli',
-      date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
-      },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    },
-    {
-      title: 'Experience',
-      company: 'Hooli',
-      date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
-      },
-      badges: [
-        { label: 'socket.io', icon: 'socket.io' },
-        { label: 'python', icon: 'python' },
-        { label: 'flask', icon: 'flask' },
-      ],
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Contributed to the development of a cutting-edge e-commerce platform.',
     },
   ],
   projects: [
     {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
+      name: 'E-commerce Platform',
+      description:
+        'Built a scalable and responsive e-commerce platform with integrated payment gateways.',
+      heroLink: './assets/ecommerce.jpg',
     },
     {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
-    },
-    {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
-    },
-    {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
-    },
-    {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
-    },
-    {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
-    },
-    {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
-    },
-    {
-      name: 'Project',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      heroLink: './assets/project.jpg',
+      name: 'Social Networking App',
+      description:
+        'Developed a feature-rich social networking app with real-time messaging functionality.',
+      heroLink: './assets/socialapp.jpg',
     },
   ],
   contact: {
-    mail: 'mail@mail.com',
+    mail: 'jane.doe@mail.com',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis auctor eros, non eleifend felis. Suspendisse non semper massa, et ornare lacus.',
+      'Feel free to reach out to me if you have any questions or collaboration opportunities. I am open to new challenges and projects.',
   },
   education: [
     {
-      title: 'Education',
-      company: 'Hooli',
+      title: 'Bachelor of Science in Computer Science',
+      company: 'University of Tech',
       date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
+        end: '01/05/2016',
+        start: '01/09/2012',
       },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description:
+        'Studied computer science with a focus on web development and software engineering.',
     },
     {
-      title: 'Education',
-      company: 'Hooli',
+      title: 'Web Development Bootcamp',
+      company: 'Code Academy',
       date: {
-        end: '01/03/2023',
-        start: '01/02/2020',
+        end: '01/08/2017',
+        start: '01/06/2017',
       },
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description:
+        'Completed an intensive web development bootcamp, gaining hands-on experience in modern web technologies.',
     },
   ],
 };
