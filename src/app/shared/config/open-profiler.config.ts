@@ -71,6 +71,11 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
       description:
         'Built a scalable and responsive e-commerce platform with integrated payment gateways.',
       heroLink: './assets/ecommerce.jpg',
+      socials: [
+        { icon: 'github', redirect: 'https://github.com/janedoe' },
+        { icon: 'gitlab', redirect: 'https://gitlab.com/janedoe' },
+        { icon: 'medium', redirect: 'https://medium.com/@janedoe' },
+      ],
     },
     {
       name: 'Social Networking App',

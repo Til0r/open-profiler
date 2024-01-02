@@ -11,6 +11,9 @@ import { BadgeModel } from '@open-profiler/models/badge.model';
 import { BadgesModel } from '@open-profiler/models/badges.model';
 import { BaseModel } from '@open-profiler/models/base.model';
 import { ExperienceModel } from '@open-profiler/models/experience.model';
+import { IconModel } from '@open-profiler/models/icon.model';
+import { OpenProfilerModel } from '@open-profiler/models/open-profiler.model';
+import { ProjectModel } from '@open-profiler/models/project.model';
 import { mapValues } from 'lodash';
 
 @Component({
@@ -39,54 +42,73 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.initColorScheme();
 
-    let color = openProfilerConfig.color;
-    if (!color) {
-      color = '11843b';
+    const color = openProfilerConfig.color || '11843b';
+    if (!('color' in openProfilerConfig)) {
       Object.assign(openProfilerConfig, { color });
     }
 
-    this.openProfilerConfig = mapValues(openProfilerConfig, (config, key) => {
-      if (key === 'base') {
-        return {
-          ...(config as BaseModel),
-          socials: (config as BaseModel).socials.map((social) => ({
-            ...social,
-            link: `${environments.simpleIcon}${social.icon}/fff`,
-          })),
-        };
-      } else if (key === 'badges') {
-        return mapValues(config as BadgesModel, (area) =>
-          (area as BadgeModel[]).map((badge) => ({
-            ...badge,
-            link: `${environments.simpleIcon}${badge.icon}/${color}`,
-          })),
-        );
-      } else if (key === 'experiences') {
-        return (config as ExperienceModel[]).map((experience) => ({
-          ...experience,
-          ...('badges' in experience && {
-            badges: experience?.badges?.map((badge) => ({
-              ...badge,
-              link: `${environments.simpleIcon}${badge.icon}/${color}`,
-            })),
-          }),
-        }));
-      }
+    this.openProfilerConfig = this.mapOpenProfilerConfig(color);
+  }
 
-      return config;
+  private mapOpenProfilerConfig(color: string): Partial<OpenProfilerModel> {
+    return mapValues(openProfilerConfig, (value, key) => {
+      switch (key) {
+        case 'base':
+          return this.mapBaseModel(value as BaseModel);
+        case 'projects':
+          return (value as ProjectModel[]).map((project) => this.mapProjectModel(project, color));
+        case 'badges':
+          return mapValues(value as BadgesModel, (area) =>
+            this.getLinkIcon<BadgeModel>(area, color),
+          );
+        case 'experiences':
+          return (value as ExperienceModel[]).map((experience) =>
+            this.mapExperienceModel(experience, color),
+          );
+        default:
+          return value;
+      }
     }) as never;
   }
+
+  private mapBaseModel = (baseModel: BaseModel): BaseModel => ({
+    ...baseModel,
+    ...(baseModel.socials && {
+      socials: this.getLinkIcon<IconModel>(baseModel.socials as IconModel[], 'fff'),
+    }),
+  });
+
+  private mapProjectModel = (project: ProjectModel, color: string): ProjectModel => ({
+    ...project,
+    ...(project.socials && {
+      socials: this.getLinkIcon<IconModel>(project.socials, color),
+    }),
+  });
+
+  private mapExperienceModel = (experience: ExperienceModel, color: string): ExperienceModel => {
+    return {
+      ...experience,
+      ...('badges' in experience && {
+        badges: this.getLinkIcon<BadgeModel>(experience.badges as BadgeModel[], color),
+      }),
+    };
+  };
+
+  private getLinkIcon = <T extends { icon?: string }>(badges: T[], color: string): T[] =>
+    badges?.map((badge) => ({
+      ...badge,
+      link: `${environments.simpleIcon}${badge.icon}/${color}`,
+    }));
 
   private initColorScheme(): void {
     const themeLocalStorage = this.getThemeLocalStorage();
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (!themeLocalStorage) {
+    if (!themeLocalStorage)
       localStorage.setItem(
         ThemeConstant.THEME,
         prefersDarkMode ? ThemeConstant.DARK : ThemeConstant.LIGHT,
       );
-    }
 
     this.toggleColorScheme(
       themeLocalStorage || (prefersDarkMode ? ThemeConstant.DARK : ThemeConstant.LIGHT),

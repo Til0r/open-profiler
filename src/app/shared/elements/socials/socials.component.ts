@@ -6,8 +6,8 @@ import { IconModel } from '@open-profiler/models/icon.model';
   standalone: true,
   imports: [NgOptimizedImage],
   selector: 'open-profiler-socials',
-  templateUrl: './socials.component.html',
   styleUrl: './socials.component.scss',
+  templateUrl: './socials.component.html',
 })
 export class SocialsComponent {
   @Input() socials: IconModel[] = [];
