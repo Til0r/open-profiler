@@ -12,6 +12,7 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
       { icon: 'gitlab', redirect: 'https://gitlab.com/janedoe' },
       { icon: 'medium', redirect: 'https://medium.com/@janedoe' },
     ],
+    avatarUrl: './assets/avatar.jpg',
   },
   about:
     'Passionate and results-driven Full Stack Developer with expertise in building scalable web applications. Proven track record of delivering high-quality software solutions in fast-paced environments.',

@@ -17,18 +17,30 @@
     </div>
 
     @if (openProfilerConfig.base; as base) {
-      <div class="flex flex-col gap-2 items-center justify-center max-w-4xl md:m-auto text-center">
-        @if (base.name; as name) {
-          <h1 class="md:text-5xl text-3xl font-bold text-white">{{ name }}</h1>
+      <div class="flex md:flex-row flex-col gap-4 items-center max-w-4xl md:m-auto">
+        @if (base.avatarUrl; as avatarUrl) {
+          <img
+            width="120"
+            height="120"
+            alt="avatar"
+            [ngSrc]="avatarUrl"
+            class="rounded-full h-[revert-layer] object-cover"
+          />
         }
 
-        @if (base.role; as role) {
-          <p class="md:text-2xl text-lg text-white">{{ role }}</p>
-        }
+        <div class="flex flex-col gap-2 items-center justify-center text-center">
+          @if (base.name; as name) {
+            <h1 class="md:text-5xl text-3xl font-bold text-white">{{ name }}</h1>
+          }
 
-        @if (base.socials; as socials) {
-          <open-profiler-socials [socials]="socials"></open-profiler-socials>
-        }
+          @if (base.role; as role) {
+            <p class="md:text-2xl text-lg text-white">{{ role }}</p>
+          }
+
+          @if (base.socials; as socials) {
+            <open-profiler-socials [socials]="socials"></open-profiler-socials>
+          }
+        </div>
       </div>
     }
   </section>
