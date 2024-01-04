@@ -1,6 +1,22 @@
 {
   "name": "open-profiler",
   "version": "0.0.0",
+  "description": "Build your unique online presence with Open Profiler a responsive and feature-rich portfolio, easily tailored to showcase your skills, experience, and projects.",
+  "displayName": "Open Profiler",
+  "publisher": "til0r",
+  "license": "MIT",
+  "pricing": "Free",
+  "author": {
+    "name": "til0r"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Til0r/open-profiler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Til0r/open-profiler/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
