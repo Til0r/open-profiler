@@ -49,7 +49,7 @@
     <section>
       <h2>About me</h2>
       <div class="flex flex-col gap-4">
-        <p class="dark:text-gray-300 text-gray-600">
+        <p class="dark:text-gray-200 text-gray-600">
           {{ about }}
         </p>
       </div>
@@ -99,7 +99,7 @@
         >
           @for (project of projects; track $index) {
             <div
-              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm justify-center p-6 dark:bg-[#2c2c2c] bg-gray-50"
+              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm justify-center p-6 dark:bg-[#1c1c1c] bg-gray-50"
             >
               <div class="flex flex-col gap-2">
                 <h3>{{ project.name }}</h3>
@@ -134,12 +134,12 @@
     <section>
       <h2>Contact</h2>
       <div class="flex md:flex-row flex-col gap-4">
-        <p class="dark:text-gray-300 text-gray-600">
+        <p class="dark:text-gray-200 text-gray-600">
           {{ contact.description }}
         </p>
         <button
           [style]="'background-color: #' + openProfilerConfig.color"
-          class="inline-flex items-center justify-end rounded-2xl px-4 py-2 text-white opacity-75 hover:opacity-100 h-fit w-fit ml-auto"
+          class="inline-flex items-center justify-end rounded-2xl px-4 py-2 text-white opacity-90 hover:opacity-100 h-fit w-fit ml-auto"
         >
           <a href="mailto::{{ contact.mail }}"> Contact </a>
         </button>
