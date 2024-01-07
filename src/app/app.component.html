@@ -58,7 +58,7 @@
 
   @if (openProfilerConfig.about; as about) {
     <section>
-      <h2>About me</h2>
+      <h2>😊 <span> About me </span></h2>
       <div class="flex flex-col gap-4">
         <p class="dark:text-gray-200 text-gray-600">
           {{ about }}
@@ -70,7 +70,7 @@
   @if (openProfilerConfig.education; as education) {
     @if (education.length) {
       <section>
-        <h2>Education</h2>
+        <h2>📚 <span> Education </span></h2>
         <open-profiler-experience [experiences]="education"></open-profiler-experience>
       </section>
     }
@@ -79,7 +79,7 @@
   @if (openProfilerConfig.badges; as badges) {
     @if ((badges | json) !== '{}') {
       <section>
-        <h2>Skills</h2>
+        <h2>💡 <span> Skills </span></h2>
         <div class="flex flex-col gap-4">
           @for (area of badges | keyvalue; track $index) {
             @if (area.value.length) {
@@ -95,7 +95,7 @@
   @if (openProfilerConfig.experiences; as experiences) {
     @if (experiences.length) {
       <section>
-        <h2>Experience</h2>
+        <h2>💼 <span> Experience </span></h2>
         <open-profiler-experience [experiences]="experiences"></open-profiler-experience>
       </section>
     }
@@ -104,7 +104,7 @@
   @if (openProfilerConfig.projects; as projects) {
     @if (projects.length) {
       <section>
-        <h2>Projects</h2>
+        <h2>📂 <span> Projects </span></h2>
         <div
           class="flex gap-4 md:w-[56rem] w-[20rem] mx-auto snap-x snap-mandatory overflow-scroll"
         >
@@ -114,7 +114,6 @@
             >
               <div class="flex flex-col gap-2">
                 <h3>{{ project.name }}</h3>
-
                 <div class="min-h-5">
                   @if (project.socials; as socials) {
                     <open-profiler-socials [socials]="socials"></open-profiler-socials>
@@ -143,7 +142,7 @@
 
   @if (openProfilerConfig.contact; as contact) {
     <section>
-      <h2>Contact</h2>
+      <h2>📧 <span> Contact </span></h2>
       <div class="flex md:flex-row flex-col gap-4">
         <p class="dark:text-gray-200 text-gray-600">
           {{ contact.description }}
