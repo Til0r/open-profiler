@@ -1,10 +1,11 @@
 import { OpenProfilerModel } from '@open-profiler/models/open-profiler.model';
 
 export const openProfilerConfig: Partial<OpenProfilerModel> = {
-  color: '12110a',
+  color: '1DB954',
   base: {
     name: 'Jane Doe',
     role: 'Full Stack Developer',
+    city: 'Milan',
     socials: [
       { icon: 'linkedin', redirect: 'https://www.linkedin.com/janedoe' },
       { icon: 'twitter', redirect: 'https://twitter.com/janedoe' },
@@ -45,8 +46,7 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
       title: 'Senior Developer',
       company: 'TechCo',
       date: {
-        end: '01/03/2022',
-        start: '01/02/2019',
+        start: '2019-02-01',
       },
       description:
         'Led a team of developers in the successful delivery of multiple web applications.',
@@ -60,8 +60,8 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
       title: 'Software Engineer',
       company: 'InnoCorp',
       date: {
-        end: '01/03/2019',
-        start: '01/02/2017',
+        end: '2019-03-01',
+        start: '2017-02-01',
       },
       description: 'Contributed to the development of a cutting-edge e-commerce platform.',
     },
@@ -95,8 +95,8 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
       title: 'Bachelor of Science in Computer Science',
       company: 'University of Tech',
       date: {
-        end: '01/05/2016',
-        start: '01/09/2012',
+        end: '2016-05-01',
+        start: '2012-09-01',
       },
       description:
         'Studied computer science with a focus on web development and software engineering.',
@@ -105,8 +105,8 @@ export const openProfilerConfig: Partial<OpenProfilerModel> = {
       title: 'Web Development Bootcamp',
       company: 'Code Academy',
       date: {
-        end: '01/08/2017',
-        start: '01/06/2017',
+        end: '2017-08-01',
+        start: '2017-06-01',
       },
       description:
         'Completed an intensive web development bootcamp, gaining hands-on experience in modern web technologies.',

@@ -1,5 +1,8 @@
 <main class="flex flex-col md:gap-20 gap-10 items-center">
-  <section class="intro md:p-36 py-20" [style]="'background-color: #' + openProfilerConfig.color">
+  <section
+    class="intro md:p-36 py-20 relative"
+    [style]="'background-color: #' + openProfilerConfig.color"
+  >
     <div class="absolute right-4 top-4 text-white cursor-pointer">
       <div class="switchColorScheme">
         <label class="switch inline-block relative">
@@ -28,20 +31,28 @@
           />
         }
 
-        <div class="flex flex-col gap-2 items-center justify-center text-center">
+        <div class="flex flex-col gap-2 items-center justify-center">
           @if (base.name; as name) {
-            <h1 class="md:text-5xl text-3xl font-bold text-white">{{ name }}</h1>
+            <h1 class="md:text-5xl text-3xl font-bold text-white w-full">{{ name }}</h1>
           }
 
           @if (base.role; as role) {
             <p class="md:text-2xl text-lg text-white">{{ role }}</p>
           }
 
-          @if (base.socials; as socials) {
-            <open-profiler-socials [socials]="socials"></open-profiler-socials>
-          }
+          <div class="flex flex-row justify-between items-center gap-2 w-full">
+            @if (base.city; as city) {
+              <p class="text-lg text-white">🏠 {{ city }}</p>
+            }
+          </div>
         </div>
       </div>
+
+      @if (base.socials; as socials) {
+        <div class="absolute bottom-4 right-4">
+          <open-profiler-socials [socials]="socials"></open-profiler-socials>
+        </div>
+      }
     }
   </section>
 
