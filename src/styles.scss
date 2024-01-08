@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'fonts';
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -11,9 +11,6 @@ body {
   height: 100%;
 }
 
-body {
-  font-family: 'Inter';
-}
 @layer components {
   body {
     @apply bg-[#f4f4f5] dark:bg-[#12110a];
