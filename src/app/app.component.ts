@@ -14,7 +14,7 @@ import { ExperienceModel } from '@open-profiler/models/experience.model';
 import { IconModel } from '@open-profiler/models/icon.model';
 import { OpenProfilerModel } from '@open-profiler/models/open-profiler.model';
 import { ProjectModel } from '@open-profiler/models/project.model';
-import { mapValues } from 'lodash';
+import { mapValues, orderBy } from 'lodash';
 
 @Component({
   standalone: true,
@@ -42,10 +42,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.initColorScheme();
 
-    const color = openProfilerConfig.color || '11843b';
-    if (!('color' in openProfilerConfig)) {
-      Object.assign(openProfilerConfig, { color });
-    }
+    const color = openProfilerConfig.color || '1DB954';
+    if (!('color' in openProfilerConfig)) Object.assign(openProfilerConfig, { color });
 
     this.openProfilerConfig = this.mapOpenProfilerConfig(color);
   }
@@ -62,14 +60,21 @@ export class AppComponent implements OnInit {
             this.getLinkIcon<BadgeModel>(area, color),
           );
         case 'experiences':
-          return (value as ExperienceModel[]).map((experience) =>
-            this.mapExperienceModel(experience, color),
+          return this.mapExperienceByDateStart(
+            (value as ExperienceModel[]).map((experience) =>
+              this.mapExperienceModel(experience, color),
+            ),
           );
+        case 'education':
+          return this.mapExperienceByDateStart(value as ExperienceModel[]);
         default:
           return value;
       }
     }) as never;
   }
+
+  private mapExperienceByDateStart = (experience: ExperienceModel[]): ExperienceModel[] =>
+    orderBy(experience, 'date.start', 'desc');
 
   private mapBaseModel = (baseModel: BaseModel): BaseModel => ({
     ...baseModel,
