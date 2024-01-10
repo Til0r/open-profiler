@@ -110,7 +110,7 @@
         <div class="flex gap-4 w-full snap-x snap-mandatory overflow-scroll">
           @for (project of projects; track $index) {
             <div
-              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm justify-center p-6 dark:bg-[#1c1c1c] bg-gray-50"
+              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-[#1c1c1c] bg-gray-50"
             >
               <div class="flex flex-col gap-2">
                 <h3>{{ project.name }}</h3>
@@ -121,14 +121,16 @@
                 </div>
               </div>
               <div class="flex flex-col gap-4">
-                <img
-                  priority
-                  width="350"
-                  height="250"
-                  [alt]="project.name"
-                  [ngSrc]="project.heroLink"
-                  class="overflow-hidden rounded-2xl object-contain object-center"
-                />
+                @if (project.heroLink; as heroLink) {
+                  <img
+                    priority
+                    width="350"
+                    height="250"
+                    [ngSrc]="heroLink"
+                    [alt]="project.name"
+                    class="overflow-hidden rounded-2xl object-contain object-center"
+                  />
+                }
                 <p class="dark:text-white text-gray-600 line-clamp-2">
                   {{ project.description }}
                 </p>
