@@ -14,6 +14,7 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
@@ -38,6 +39,9 @@
       ],
       "@open-profiler/env/*": [
         "./src/environments/*"
+      ],
+      "@open-profiler/outer-config/*": [
+        "./config/*"
       ]
     }
   },

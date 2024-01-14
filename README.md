@@ -14,7 +14,7 @@ Open Profiler is an open-source project that serves as a personal portfolio temp
 
 2. **Install Dependencies**: Run `npm install` in the project to install dependencies.
 
-3. **Customize Configuration**: Modify the [CONFIG](./src/app/shared/config/open-profiler.config.ts) object with your information (please read the [GUIDELINES](./src/app/shared/config/README.md)).
+3. **Customize Open Profiler Configuration**: Update the [CONFIG](./config/open-profiler.config.json) object with your information (please read the [GUIDELINES](./src/app/shared/config/README.md)).
 
 4. **Deploy**: Deploy your personalized portfolio using your preferred hosting service.
 

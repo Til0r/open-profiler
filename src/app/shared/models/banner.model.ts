@@ -1,6 +1,6 @@
 import { IconModel } from './icon.model';
 
-export interface BaseModel {
+export interface BannerModel {
   name: string;
   role: string;
   city: string;

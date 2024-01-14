@@ -20,7 +20,7 @@ body {
     @apply w-full flex flex-col gap-4;
 
     &:not(.intro) {
-      @apply max-w-4xl md:px-0 px-4;
+      @apply max-w-4xl md:px-2 px-4;
     }
   }
 

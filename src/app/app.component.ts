@@ -9,7 +9,7 @@ import { SocialsComponent } from '@open-profiler/elements/socials/socials.compon
 import { environments } from '@open-profiler/env/environments';
 import { BadgeModel } from '@open-profiler/models/badge.model';
 import { BadgesModel } from '@open-profiler/models/badges.model';
-import { BaseModel } from '@open-profiler/models/base.model';
+import { BannerModel } from '@open-profiler/models/banner.model';
 import { ExperienceModel } from '@open-profiler/models/experience.model';
 import { IconModel } from '@open-profiler/models/icon.model';
 import { OpenProfilerModel } from '@open-profiler/models/open-profiler.model';
@@ -51,8 +51,8 @@ export class AppComponent implements OnInit {
   private mapOpenProfilerConfig(color: string): Partial<OpenProfilerModel> {
     return mapValues(openProfilerConfig, (value, key) => {
       switch (key) {
-        case 'base':
-          return this.mapBaseModel(value as BaseModel);
+        case 'banner':
+          return this.mapBannerModel(value as BannerModel);
         case 'projects':
           return (value as ProjectModel[]).map((project) => this.mapProjectModel(project, color));
         case 'badges':
@@ -76,10 +76,10 @@ export class AppComponent implements OnInit {
   private mapExperienceByDateStart = (experience: ExperienceModel[]): ExperienceModel[] =>
     orderBy(experience, 'date.start', 'desc');
 
-  private mapBaseModel = (baseModel: BaseModel): BaseModel => ({
-    ...baseModel,
-    ...(baseModel.socials && {
-      socials: this.getLinkIcon<IconModel>(baseModel.socials as IconModel[], 'fff'),
+  private mapBannerModel = (bannerModel: BannerModel): BannerModel => ({
+    ...bannerModel,
+    ...(bannerModel.socials && {
+      socials: this.getLinkIcon<IconModel>(bannerModel.socials as IconModel[], 'fff'),
     }),
   });
 
