@@ -10,13 +10,17 @@ Open Profiler is an open-source project that serves as a personal portfolio temp
 
 ## How to Use
 
-1. **Fork the Repository**: Begin by forking the repository to your GitHub account.
+1. **Fork the Repository**: Start by forking the repository to your GitHub account.
 
-2. **Install Dependencies**: Run `npm install` in the project to install dependencies.
+2. **Install Dependencies**: Execute `npm install` to install the required dependencies.
 
-3. **Customize Open Profiler Configuration**: Update the [CONFIG](./config/open-profiler.config.json) object with your information (please read the [GUIDELINES](./src/app/shared/config/README.md)).
+3. **Configure Open Profiler**: Customize the Open Profiler configuration by updating the [CONFIG](./config/open-profiler.config.json) object with your information. Refer to the [GUIDELINES](./src/app/shared/config/README.md) for detailed instructions.
 
-4. **Deploy**: Deploy your personalized portfolio using your preferred hosting service.
+4. **Configure Seo Meta Tags**: Update the [CONFIG](./config/seo.config.json) object with your specific information for SEO meta tags.
+
+5. **Build**: Generate the project's distribution files by running `npm run build`.
+
+6. **Deploy**: Deploy your personalized portfolio from the (./dist/<name-project>/browser/) directory using your preferred hosting service.
 
 ## How to Contribute
 
