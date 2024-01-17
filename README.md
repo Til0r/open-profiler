@@ -18,7 +18,10 @@ Open Profiler is an open-source project that serves as a personal portfolio temp
 
 4. **Configure Seo Meta Tags**: Update the [CONFIG](./config/seo.config.json) object with your specific information for SEO meta tags.
 
-5. **Build**: Generate the project's distribution files by running `npm run build`.
+5. **Build**:
+
+   - Push a tag and let GitHub Actions manage the build process. Afterward, access the compiled files from the releases.
+   - Alternatively, build the project locally by running npm run build.
 
 6. **Deploy**: Deploy your personalized portfolio from the (./dist/<name-project>/browser/) directory using your preferred hosting service.
 
