@@ -135,6 +135,15 @@
         "start": "2017-02-01"
       },
       "description": "Contributed to the development of a cutting-edge e-commerce platform."
+    },
+    {
+      "title": "Team Lead",
+      "company": "InnoCorp",
+      "date": {
+        "start": "2016-05-01",
+        "end": "2017-01-01"
+      },
+      "description": "Managed a cross-functional team, overseeing project development and ensuring timely delivery."
     }
   ],
   "projects": [
@@ -160,7 +169,36 @@
     {
       "name": "Social Networking App",
       "description": "Developed a feature-rich social networking app with real-time messaging functionality.",
-      "heroLink": "./assets/socialapp.jpg"
+      "heroLink": "./assets/socialapp.jpg",
+      "socials": [
+        {
+          "icon": "github",
+          "redirect": "https://github.com/janedoe/socialapp"
+        },
+        {
+          "icon": "twitter",
+          "redirect": "https://twitter.com/janedoe/socialapp"
+        }
+      ]
+    },
+    {
+      "name": "Real-time Chat Application",
+      "description": "Developed a secure and efficient real-time chat application with end-to-end encryption for enhanced privacy.",
+      "heroLink": "./assets/chatapp.jpg",
+      "socials": [
+        {
+          "icon": "github",
+          "redirect": "https://github.com/janedoe/chatapp"
+        },
+        {
+          "icon": "twitter",
+          "redirect": "https://twitter.com/janedoe/chatapp"
+        },
+        {
+          "icon": "linkedin",
+          "redirect": "https://www.linkedin.com/in/janedoe/chatapp"
+        }
+      ]
     }
   ],
   "contact": {
@@ -185,6 +223,15 @@
         "start": "2017-06-01"
       },
       "description": "Completed an intensive web development bootcamp, gaining hands-on experience in modern web technologies."
+    },
+    {
+      "title": "Certification in Advanced Python Development",
+      "company": "TechSkills Institute",
+      "date": {
+        "end": "2018-12-01",
+        "start": "2018-06-01"
+      },
+      "description": "Obtained certification in advanced Python development, showcasing expertise in backend development."
     }
   ]
 }
