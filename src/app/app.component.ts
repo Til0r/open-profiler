@@ -42,10 +42,23 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.initColorScheme();
 
-    const color = openProfilerConfig.color || '1DB954';
-    if (!('color' in openProfilerConfig)) Object.assign(openProfilerConfig, { color });
+    const primary = openProfilerConfig.color?.primary || '1db954';
 
-    this.openProfilerConfig = this.mapOpenProfilerConfig(color);
+    this.setCssVariable('--primary', `#${primary}`);
+
+    const light = this.openProfilerConfig.color?.light;
+    this.setCssVariable('--light', light?.background || '#f4f4f5');
+    this.setCssVariable('--light-card', light?.card || '#f9fafb');
+    this.setCssVariable('--light-second-level', light?.backgroundSecondLevel || '#f4f4f5');
+
+    const dark = this.openProfilerConfig.color?.dark;
+    this.setCssVariable('--dark', dark?.background || '#12110a');
+    this.setCssVariable('--dark-card', dark?.card || '#1c1c1c');
+    this.setCssVariable('--dark-second-level', light?.backgroundSecondLevel || '#262626');
+
+    this.openProfilerConfig = this.mapOpenProfilerConfig(
+      openProfilerConfig.color?.badges || '1db954',
+    );
   }
 
   private mapOpenProfilerConfig(color: string): Partial<OpenProfilerModel> {
@@ -138,4 +151,8 @@ export class AppComponent implements OnInit {
   }
 
   protected getThemeLocalStorage = (): string => localStorage.getItem(ThemeConstant.THEME) || '';
+
+  private setCssVariable = (variableName: string, value: string) => {
+    document.documentElement.style.setProperty(variableName, value);
+  };
 }

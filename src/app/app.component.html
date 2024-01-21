@@ -1,8 +1,5 @@
 <main class="flex flex-col md:gap-20 gap-10 items-center">
-  <section
-    class="intro md:p-36 py-20 relative"
-    [style]="'background-color: #' + openProfilerConfig.color"
-  >
+  <section class="intro md:p-36 py-20 relative bg-primary">
     <div class="absolute right-4 top-4 text-white cursor-pointer">
       <div class="switchColorScheme">
         <label class="switch inline-block relative">
@@ -110,7 +107,7 @@
         <div class="flex gap-4 w-full snap-x snap-mandatory overflow-scroll py-2">
           @for (project of projects; track $index) {
             <div
-              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-[#1c1c1c] bg-gray-50"
+              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-dark-card bg-light-card"
             >
               <div class="flex flex-col gap-2">
                 <h3>{{ project.name }}</h3>
@@ -150,8 +147,7 @@
           {{ contact.description }}
         </p>
         <button
-          [style]="'background-color: #' + openProfilerConfig.color"
-          class="inline-flex items-center justify-end rounded-2xl px-4 py-2 text-white opacity-90 hover:opacity-100 h-fit w-fit ml-auto shadow-sm"
+          class="inline-flex items-center justify-end rounded-2xl px-4 py-2 text-white opacity-90 hover:opacity-100 h-fit w-fit ml-auto shadow-sm bg-primary"
         >
           <a href="mailto::{{ contact.mail }}"> Contact </a>
         </button>
@@ -159,10 +155,7 @@
     </section>
   }
 
-  <footer
-    class="w-full py-12 text-center"
-    [style]="'background-color: #' + openProfilerConfig.color"
-  >
+  <footer class="w-full py-12 text-center bg-primary">
     <p class="text-white md:text-lg">
       © {{ currentYear }} - Made with ❤️ by
       <a href="https://github.com/til0r/open-profiler" class="font-bold" target="_blank">

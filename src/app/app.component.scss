@@ -2,7 +2,6 @@ $size-of-icon: 1.4rem;
 $slider-offset: 0.3rem;
 $height-of-switch: 2rem;
 $width-of-switch: 3.5rem;
-$slider-checked-dark: #333333;
 
 .switchColorScheme *,
 .switchColorScheme ::after,
@@ -18,7 +17,7 @@ $slider-checked-dark: #333333;
 
   .slider {
     transition: 0.4s;
-    background-color: #f4f4f5;
+    background-color: var(--light);
     box-shadow: #2123261a 0px 10px 10px -10px;
 
     &:before {
@@ -38,11 +37,11 @@ $slider-checked-dark: #333333;
 
 .switchColorScheme {
   & input:checked + .slider {
-    background-color: $slider-checked-dark;
+    background-color: var(--dark);
 
     &:before {
       left: calc(100% - 1.7rem);
-      background: $slider-checked-dark;
+      background: var(--dark);
       box-shadow:
         inset -3px -2px 5px -2px #8983f7,
         inset -10px -4px 0 0 #a3dafb;

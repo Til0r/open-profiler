@@ -1,5 +1,8 @@
 {
-  "color": "1DB954",
+  "color": {
+    "badges": "1db954",
+    "primary": "1db954"
+  },
   "banner": {
     "name": "Jane Doe",
     "role": "Full Stack Developer",

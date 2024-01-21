@@ -13,7 +13,7 @@ body {
 
 @layer components {
   body {
-    @apply bg-[#f4f4f5] dark:bg-[#12110a];
+    @apply bg-light dark:bg-dark;
   }
 
   section {
