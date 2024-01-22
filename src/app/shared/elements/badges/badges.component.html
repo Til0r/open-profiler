@@ -3,7 +3,11 @@
     @for (badge of list; track $index) {
       <div
         class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 px-3 w-fit font-semibold cursor-default shadow-sm"
-        [class]="!bgSecondLevel ? 'dark:bg-[#1c1c1c] bg-gray-50' : 'dark:bg-[#262626] bg-[#f4f4f5]'"
+        [class]="
+          !bgSecondLevel
+            ? 'dark:bg-dark-card bg-light-card'
+            : 'dark:bg-dark-second-level bg-light-second-level'
+        "
       >
         @if (badge.link) {
           <img
