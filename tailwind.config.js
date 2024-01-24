@@ -16,6 +16,9 @@ module.exports = {
         "dark-second-level": "var(--dark-second-level)",
         "light-second-level": "var(--light-second-level)"
       },
+      borderColor: {
+        "primary": "var(--border-color)"
+      }
     },
   },
   plugins: [],

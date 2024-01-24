@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IconModel } from '@open-profiler/models/icon.model';
+import { BadgesUtil } from '@open-profiler/utils/badges.util';
 
 @Component({
   standalone: true,
@@ -9,8 +10,13 @@ import { IconModel } from '@open-profiler/models/icon.model';
   styleUrl: './socials.component.scss',
   templateUrl: './socials.component.html',
 })
-export class SocialsComponent {
+export class SocialsComponent implements OnInit {
+  @Input() color: string = '1db954';
   @Input() socials: IconModel[] = [];
 
   constructor() {}
+
+  ngOnInit(): void {
+    this.socials = BadgesUtil.setLinkIcon(this.socials, this.color);
+  }
 }

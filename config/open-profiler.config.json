@@ -1,7 +1,7 @@
 {
   "color": {
-    "badges": "1db954",
-    "primary": "1db954"
+    "badges": "#1db954",
+    "primary": "#1db954"
   },
   "banner": {
     "name": "Jane Doe",
@@ -127,6 +127,30 @@
         {
           "label": "docker",
           "icon": "docker"
+        }
+      ],
+      "children": [
+        {
+          "title": "Senior Developer",
+          "company": "TechCo",
+          "date": {
+            "start": "2019-02-01"
+          },
+          "description": "Led a team of developers in the successful delivery of multiple web applications.",
+          "badges": [
+            {
+              "label": "angular",
+              "icon": "angular"
+            },
+            {
+              "label": "nodejs",
+              "icon": "nodedotjs"
+            },
+            {
+              "label": "docker",
+              "icon": "docker"
+            }
+          ]
         }
       ]
     },

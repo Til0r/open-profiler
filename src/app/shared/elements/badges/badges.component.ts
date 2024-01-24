@@ -1,6 +1,8 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { environments } from '@open-profiler/env/environments';
 import { BadgeModel } from '@open-profiler/models/badge.model';
+import { BadgesUtil } from '@open-profiler/utils/badges.util';
 
 @Component({
   standalone: true,
@@ -9,9 +11,19 @@ import { BadgeModel } from '@open-profiler/models/badge.model';
   templateUrl: './badges.component.html',
   imports: [NgOptimizedImage],
 })
-export class BadgesComponent {
+export class BadgesComponent implements OnInit {
+  @Input() color: string = '1db954';
+  @Input() list: BadgeModel[] = [];
   @Input() bgSecondLevel: boolean = false;
-  @Input() list: BadgeModel[] | undefined = [];
 
   constructor() {}
+
+  ngOnInit(): void {
+    this.list = BadgesUtil.setLinkIcon(this.list, this.color);
+
+    this.list = this.list?.map((item) => ({
+      ...item,
+      link: `${environments.simpleIcon}${item.icon}/${this.color}`,
+    }));
+  }
 }

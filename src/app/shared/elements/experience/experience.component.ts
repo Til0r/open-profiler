@@ -11,6 +11,7 @@ import { BadgesComponent } from '../badges/badges.component';
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent {
+  @Input() colorBadges: string = '';
   @Input() experiences: ExperienceModel[] = [];
 
   constructor() {}

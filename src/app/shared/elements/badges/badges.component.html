@@ -2,7 +2,7 @@
   <div class="flex flex-wrap gap-4">
     @for (badge of list; track $index) {
       <div
-        class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 px-3 w-fit font-semibold cursor-default shadow-sm"
+        class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 px-3 w-fit font-semibold cursor-default shadow-sm border-primary border"
         [class]="
           !bgSecondLevel
             ? 'dark:bg-dark-card bg-light-card'

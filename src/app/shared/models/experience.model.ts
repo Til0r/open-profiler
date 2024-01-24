@@ -7,6 +7,7 @@ export interface ExperienceModel {
     end?: string;
     start: string;
   };
-  description: string;
+  description?: string;
   badges?: BadgeModel[];
+  children?: ExperienceModel[];
 }

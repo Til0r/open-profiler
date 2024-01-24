@@ -28,7 +28,7 @@
           />
         }
 
-        <div class="flex flex-col gap-2 items-center justify-center">
+        <div class="flex flex-col gap-2">
           @if (banner.name; as name) {
             <h1 class="md:text-5xl text-3xl font-bold text-white w-full md:text-start text-center">
               {{ name }}
@@ -36,10 +36,10 @@
           }
 
           @if (banner.role; as role) {
-            <p class="md:text-2xl text-lg text-white">{{ role }}</p>
+            <p class="md:text-2xl text-lg text-white md:text-start text-center">{{ role }}</p>
           }
 
-          <div class="flex flex-row justify-between items-center gap-2 w-full">
+          <div class="flex flex-row md:items-center gap-2 w-full">
             @if (banner.city; as city) {
               <p class="text-lg text-white md:mx-0 mx-auto">🏠 {{ city }}</p>
             }
@@ -49,7 +49,7 @@
 
       @if (banner.socials; as socials) {
         <div class="absolute bottom-4 right-4">
-          <open-profiler-socials [socials]="socials"></open-profiler-socials>
+          <open-profiler-socials [socials]="socials" [color]="'fff'"></open-profiler-socials>
         </div>
       }
     }
@@ -70,7 +70,10 @@
     @if (education.length) {
       <section>
         <h2>📚 <span> Education </span></h2>
-        <open-profiler-experience [experiences]="education"></open-profiler-experience>
+        <open-profiler-experience
+          [experiences]="education"
+          [colorBadges]="colorBadges"
+        ></open-profiler-experience>
       </section>
     }
   }
@@ -95,7 +98,10 @@
     @if (experiences.length) {
       <section>
         <h2>💼 <span> Experience </span></h2>
-        <open-profiler-experience [experiences]="experiences"></open-profiler-experience>
+        <open-profiler-experience
+          [experiences]="experiences"
+          [colorBadges]="colorBadges"
+        ></open-profiler-experience>
       </section>
     }
   }
@@ -107,17 +113,20 @@
         <div class="flex gap-4 w-full snap-x snap-mandatory overflow-scroll py-2">
           @for (project of projects; track $index) {
             <div
-              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-dark-card bg-light-card"
+              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-dark-card bg-light-card border-primary border"
             >
               <div class="flex flex-col gap-2">
                 <h3>{{ project.name }}</h3>
                 <div class="min-h-5">
                   @if (project.socials; as socials) {
-                    <open-profiler-socials [socials]="socials"></open-profiler-socials>
+                    <open-profiler-socials
+                      [socials]="socials"
+                      [color]="colorBadges"
+                    ></open-profiler-socials>
                   }
                 </div>
               </div>
-              <div class="flex flex-col gap-4">
+              <div class="flex flex-col gap-4 justify-between h-full">
                 @if (project.heroLink; as heroLink) {
                   <img
                     priority
@@ -125,9 +134,10 @@
                     height="250"
                     [ngSrc]="heroLink"
                     [alt]="project.name"
-                    class="overflow-hidden rounded-2xl object-contain object-center"
+                    class="overflow-hidden rounded-2xl object-contain object-center my-auto"
                   />
                 }
+
                 <p class="dark:text-white text-gray-600 line-clamp-2">
                   {{ project.description }}
                 </p>
