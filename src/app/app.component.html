@@ -1,176 +1,180 @@
-<main class="flex flex-col md:gap-20 gap-10 items-center">
-  <section class="intro md:p-36 py-20 relative bg-primary">
-    <div class="absolute right-4 top-4 text-white cursor-pointer">
-      <div class="switchColorScheme">
-        <label class="switch inline-block relative">
-          <input
-            type="checkbox"
-            class="hidden invisible"
-            (click)="switchColorScheme()"
-            [checked]="getThemeLocalStorage() === ThemeConstant.DARK"
-          />
-          <span
-            class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 rounded-2xl"
-          ></span>
-        </label>
+@if (openProfilerConfig(); as openProfilerConfig) {
+  <main class="flex flex-col md:gap-20 gap-10 items-center">
+    <section class="intro md:p-36 py-20 relative bg-primary">
+      <div class="absolute right-4 top-4 text-white cursor-pointer">
+        <div class="switchColorScheme">
+          <label class="switch inline-block relative">
+            <input
+              type="checkbox"
+              class="hidden invisible"
+              (click)="switchColorScheme()"
+              [checked]="getThemeLocalStorage() === ThemeConstant.DARK"
+            />
+            <span
+              class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 rounded-2xl"
+            ></span>
+          </label>
+        </div>
       </div>
-    </div>
 
-    @if (openProfilerConfig.banner; as banner) {
-      <div class="flex md:flex-row flex-col gap-4 items-center max-w-4xl md:m-auto">
-        @if (banner.avatarUrl; as avatarUrl) {
-          <img
-            width="120"
-            height="120"
-            alt="avatar"
-            [ngSrc]="avatarUrl"
-            class="rounded-full h-[revert-layer] object-cover"
-          />
-        }
-
-        <div class="flex flex-col gap-2">
-          @if (banner.name; as name) {
-            <h1 class="md:text-5xl text-3xl font-bold text-white w-full md:text-start text-center">
-              {{ name }}
-            </h1>
+      @if (openProfilerConfig.banner; as banner) {
+        <div class="flex md:flex-row flex-col gap-4 items-center max-w-4xl md:m-auto">
+          @if (banner.avatarUrl; as avatarUrl) {
+            <img
+              width="120"
+              height="120"
+              alt="avatar"
+              [ngSrc]="avatarUrl"
+              class="rounded-full h-[revert-layer] object-cover"
+            />
           }
 
-          @if (banner.role; as role) {
-            <p class="md:text-2xl text-lg text-white md:text-start text-center">{{ role }}</p>
-          }
-
-          <div class="flex flex-row md:items-center gap-2 w-full">
-            @if (banner.city; as city) {
-              <p class="text-lg text-white md:mx-0 mx-auto">🏠 {{ city }}</p>
+          <div class="flex flex-col gap-2">
+            @if (banner.name; as name) {
+              <h1
+                class="md:text-5xl text-3xl font-bold text-white w-full md:text-start text-center"
+              >
+                {{ name }}
+              </h1>
             }
+
+            @if (banner.role; as role) {
+              <p class="md:text-2xl text-lg text-white md:text-start text-center">{{ role }}</p>
+            }
+
+            <div class="flex flex-row md:items-center gap-2 w-full">
+              @if (banner.city; as city) {
+                <p class="text-lg text-white md:mx-0 mx-auto">🏠 {{ city }}</p>
+              }
+            </div>
           </div>
         </div>
-      </div>
 
-      @if (banner.socials; as socials) {
-        <div class="absolute bottom-4 right-4">
-          <open-profiler-socials [socials]="socials" [color]="'fff'"></open-profiler-socials>
+        @if (banner.socials; as socials) {
+          <div class="absolute bottom-4 right-4">
+            <open-profiler-socials [socials]="socials" [color]="'fff'"></open-profiler-socials>
+          </div>
+        }
+      }
+    </section>
+
+    @if (openProfilerConfig.about; as about) {
+      <section>
+        <h2>😊 <span> About me </span></h2>
+        <div class="flex flex-col gap-4">
+          <p class="dark:text-gray-200 text-gray-600">
+            {{ about }}
+          </p>
         </div>
+      </section>
+    }
+
+    @if (openProfilerConfig.education; as education) {
+      @if (education.length) {
+        <section>
+          <h2>📚 <span> Education </span></h2>
+          <open-profiler-experience
+            [experiences]="education"
+            [colorBadges]="colorBadges()"
+          ></open-profiler-experience>
+        </section>
       }
     }
-  </section>
 
-  @if (openProfilerConfig.about; as about) {
-    <section>
-      <h2>😊 <span> About me </span></h2>
-      <div class="flex flex-col gap-4">
-        <p class="dark:text-gray-200 text-gray-600">
-          {{ about }}
-        </p>
-      </div>
-    </section>
-  }
-
-  @if (openProfilerConfig.education; as education) {
-    @if (education.length) {
-      <section>
-        <h2>📚 <span> Education </span></h2>
-        <open-profiler-experience
-          [experiences]="education"
-          [colorBadges]="colorBadges"
-        ></open-profiler-experience>
-      </section>
-    }
-  }
-
-  @if (openProfilerConfig.badges; as badges) {
-    @if ((badges | json) !== '{}') {
-      <section>
-        <h2>💡 <span> Skills </span></h2>
-        <div class="flex flex-col gap-4">
-          @for (area of badges | keyvalue; track $index) {
-            @if (area.value.length) {
-              <h3>{{ area.key }}</h3>
-              <open-profiler-badges [list]="area.value"></open-profiler-badges>
+    @if (openProfilerConfig.badges; as badges) {
+      @if ((badges | json) !== '{}') {
+        <section>
+          <h2>💡 <span> Skills </span></h2>
+          <div class="flex flex-col gap-4">
+            @for (area of badges | keyvalue; track $index) {
+              @if (area.value.length) {
+                <h3>{{ area.key }}</h3>
+                <open-profiler-badges [list]="area.value"></open-profiler-badges>
+              }
             }
-          }
-        </div>
-      </section>
+          </div>
+        </section>
+      }
     }
-  }
 
-  @if (openProfilerConfig.experiences; as experiences) {
-    @if (experiences.length) {
-      <section>
-        <h2>💼 <span> Experience </span></h2>
-        <open-profiler-experience
-          [experiences]="experiences"
-          [colorBadges]="colorBadges"
-        ></open-profiler-experience>
-      </section>
+    @if (openProfilerConfig.experiences; as experiences) {
+      @if (experiences.length) {
+        <section>
+          <h2>💼 <span> Experience </span></h2>
+          <open-profiler-experience
+            [experiences]="experiences"
+            [colorBadges]="colorBadges()"
+          ></open-profiler-experience>
+        </section>
+      }
     }
-  }
 
-  @if (openProfilerConfig.projects; as projects) {
-    @if (projects.length) {
-      <section>
-        <h2>📂 <span> Projects </span></h2>
-        <div class="flex gap-4 w-full snap-x snap-mandatory overflow-scroll py-2">
-          @for (project of projects; track $index) {
-            <div
-              class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-dark-card bg-light-card border-primary border"
-            >
-              <div class="flex flex-col gap-2">
-                <h3>{{ project.name }}</h3>
-                <div class="min-h-5">
-                  @if (project.socials; as socials) {
-                    <open-profiler-socials
-                      [socials]="socials"
-                      [color]="colorBadges"
-                    ></open-profiler-socials>
+    @if (openProfilerConfig.projects; as projects) {
+      @if (projects.length) {
+        <section>
+          <h2>📂 <span> Projects </span></h2>
+          <div class="flex gap-4 w-full snap-x snap-mandatory overflow-scroll py-2">
+            @for (project of projects; track $index) {
+              <div
+                class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-dark-card bg-light-card border-primary border"
+              >
+                <div class="flex flex-col gap-2">
+                  <h3>{{ project.name }}</h3>
+                  <div class="min-h-5">
+                    @if (project.socials; as socials) {
+                      <open-profiler-socials
+                        [socials]="socials"
+                        [color]="colorBadges()"
+                      ></open-profiler-socials>
+                    }
+                  </div>
+                </div>
+                <div class="flex flex-col gap-4 justify-between h-full">
+                  @if (project.heroLink; as heroLink) {
+                    <img
+                      priority
+                      width="350"
+                      height="250"
+                      [ngSrc]="heroLink"
+                      [alt]="project.name"
+                      class="overflow-hidden rounded-2xl object-contain object-center my-auto"
+                    />
                   }
+
+                  <p class="dark:text-white text-gray-600 line-clamp-2">
+                    {{ project.description }}
+                  </p>
                 </div>
               </div>
-              <div class="flex flex-col gap-4 justify-between h-full">
-                @if (project.heroLink; as heroLink) {
-                  <img
-                    priority
-                    width="350"
-                    height="250"
-                    [ngSrc]="heroLink"
-                    [alt]="project.name"
-                    class="overflow-hidden rounded-2xl object-contain object-center my-auto"
-                  />
-                }
+            }
+          </div>
+        </section>
+      }
+    }
 
-                <p class="dark:text-white text-gray-600 line-clamp-2">
-                  {{ project.description }}
-                </p>
-              </div>
-            </div>
-          }
+    @if (openProfilerConfig.contact; as contact) {
+      <section>
+        <h2>📧 <span> Contact </span></h2>
+        <div class="flex md:flex-row flex-col gap-4">
+          <p class="dark:text-gray-200 text-gray-600">
+            {{ contact.description }}
+          </p>
+          <button
+            class="inline-flex items-center justify-end rounded-2xl px-4 py-2 text-white opacity-90 hover:opacity-100 h-fit w-fit ml-auto shadow-sm bg-primary"
+          >
+            <a href="mailto::{{ contact.mail }}"> Contact </a>
+          </button>
         </div>
       </section>
     }
-  }
 
-  @if (openProfilerConfig.contact; as contact) {
-    <section>
-      <h2>📧 <span> Contact </span></h2>
-      <div class="flex md:flex-row flex-col gap-4">
-        <p class="dark:text-gray-200 text-gray-600">
-          {{ contact.description }}
-        </p>
-        <button
-          class="inline-flex items-center justify-end rounded-2xl px-4 py-2 text-white opacity-90 hover:opacity-100 h-fit w-fit ml-auto shadow-sm bg-primary"
-        >
-          <a href="mailto::{{ contact.mail }}"> Contact </a>
-        </button>
-      </div>
-    </section>
-  }
-
-  <footer class="w-full py-12 text-center bg-primary">
-    <p class="text-white md:text-lg">
-      © {{ currentYear }} - Made with ❤️ by
-      <a href="https://github.com/til0r/open-profiler" class="font-bold" target="_blank">
-        open-profiler
-      </a>
-    </p>
-  </footer>
-</main>
+    <footer class="w-full py-12 text-center bg-primary">
+      <p class="text-white md:text-lg">
+        © {{ currentYear }} - Made with ❤️ by
+        <a href="https://github.com/til0r/open-profiler" class="font-bold" target="_blank">
+          open-profiler
+        </a>
+      </p>
+    </footer>
+  </main>
+}
