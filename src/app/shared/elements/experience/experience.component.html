@@ -1,46 +1,44 @@
-<div class="flex flex-col gap-4 items-center">
-  @for (experience of experiences; track $index) {
-    <div
-      class="flex flex-col gap-4 rounded-2xl w-full p-6 dark:bg-dark-card bg-light-card shadow-sm border-primary border"
-    >
-      <div class="flex flex-col">
-        <h3>{{ experience.title }}</h3>
-        <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
-        @if (experience.date; as experienceDate) {
-          <p class="text-sm dark:text-gray-300 text-gray-400">
-            {{ experienceDate.start | date: 'MM/yyyy' }}
+@if (experiences(); as experiences) {
+  <div class="flex flex-col gap-4 items-center">
+    @for (experience of experiences; track $index) {
+      <div
+        class="flex flex-col gap-4 rounded-2xl w-full p-6 dark:bg-dark-card bg-light-card shadow-sm border-primary border"
+      >
+        <div class="flex flex-col">
+          <h3>{{ experience.title }}</h3>
+          <p class="text-lg dark:text-gray-200 text-gray-600">{{ experience.company }}</p>
+          @if (experience.date; as experienceDate) {
+            <p class="text-sm dark:text-gray-300 text-gray-400">
+              {{ experienceDate.start | date: 'MM/yyyy' }}
 
-            @if (experienceDate.end; as experienceDateEnd) {
-              - {{ experienceDateEnd | date: 'MM/yyyy' }}
-            } @else {
-              - Present
-            }
-          </p>
+              @if (experienceDate.end; as experienceDateEnd) {
+                - {{ experienceDateEnd | date: 'MM/yyyy' }}
+              } @else {
+                - Present
+              }
+            </p>
+          }
+        </div>
+
+        @if (experience?.badges; as badges) {
+          @if (badges.length) {
+            <open-profiler-badges [list]="badges" [color]="colorBadges()"></open-profiler-badges>
+          }
+        }
+
+        @if (experience.children; as children) {
+          <open-profiler-experience
+            [experiences]="children"
+            [colorBadges]="colorBadges()"
+          ></open-profiler-experience>
+        }
+
+        @if (experience.description; as description) {
+          <div class="dark:text-white text-gray-600">
+            <p>{{ description }}</p>
+          </div>
         }
       </div>
-
-      @if (experience?.badges; as badges) {
-        @if (badges.length) {
-          <open-profiler-badges
-            [bgSecondLevel]="true"
-            [color]="colorBadges"
-            [list]="badges"
-          ></open-profiler-badges>
-        }
-      }
-
-      @if (experience.children; as children) {
-        <open-profiler-experience
-          [experiences]="children"
-          [colorBadges]="colorBadges"
-        ></open-profiler-experience>
-      }
-
-      @if (experience.description; as description) {
-        <div class="dark:text-white text-gray-600">
-          <p>{{ description }}</p>
-        </div>
-      }
-    </div>
-  }
-</div>
+    }
+  </div>
+}

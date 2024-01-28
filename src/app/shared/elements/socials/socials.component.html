@@ -1,11 +1,13 @@
-@if (socials.length) {
-  <div class="flex flex-wrap gap-2 mx-auto items-center w-full">
-    @for (social of socials; track $index) {
-      @if (social.link) {
-        <a [href]="social.redirect" target="_blank">
-          <img width="20" height="20" [alt]="social.icon" [ngSrc]="social.link" />
-        </a>
+@if (socialsMapped(); as socials) {
+  @if (socials.length) {
+    <div class="flex flex-wrap gap-2 mx-auto items-center w-full">
+      @for (social of socials; track $index) {
+        @if (social.link) {
+          <a [href]="social.redirect" target="_blank">
+            <img width="20" height="20" [alt]="social.icon" [ngSrc]="social.link" />
+          </a>
+        }
       }
-    }
-  </div>
+    </div>
+  }
 }

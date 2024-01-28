@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ExperienceModel } from '@open-profiler/models/experience.model';
 import { BadgesComponent } from '../badges/badges.component';
 
@@ -9,10 +9,11 @@ import { BadgesComponent } from '../badges/badges.component';
   styleUrl: './experience.component.scss',
   imports: [CommonModule, BadgesComponent],
   templateUrl: './experience.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExperienceComponent {
-  @Input() colorBadges: string = '';
-  @Input() experiences: ExperienceModel[] = [];
+  colorBadges = input<string>('');
+  experiences = input<ExperienceModel[]>([]);
 
   constructor() {}
 }

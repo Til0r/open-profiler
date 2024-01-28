@@ -1,24 +1,18 @@
-@if (list && list.length) {
-  <div class="flex flex-wrap gap-4">
-    @for (badge of list; track $index) {
-      <div
-        class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 px-3 w-fit font-semibold cursor-default shadow-sm border-primary border dark:bg-dark-card bg-light-card"
-      >
-        @if (badge.link) {
-          <img
-            [alt]="badge.label"
-            [ngSrc]="badge.link"
-            [width]="bgSecondLevel ? 20 : 15"
-            [height]="bgSecondLevel ? 20 : 15"
-          />
-        }
+@if (listMapped(); as list) {
+  @if (list.length) {
+    <div class="flex flex-wrap gap-4">
+      @for (badge of list; track $index) {
         <div
-          class="dark:text-gray-100 text-gray-700 capitalize"
-          [class]="bgSecondLevel ? 'text-sm' : ''"
+          class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 px-3 w-fit font-semibold cursor-default shadow-sm border-primary border dark:bg-dark-card bg-light-card"
         >
-          {{ badge.label }}
+          @if (badge.link) {
+            <img [alt]="badge.label" [ngSrc]="badge.link" [width]="20" [height]="20" />
+          }
+          <div class="dark:text-gray-100 text-gray-700 capitalize">
+            {{ badge.label }}
+          </div>
         </div>
-      </div>
-    }
-  </div>
+      }
+    </div>
+  }
 }
