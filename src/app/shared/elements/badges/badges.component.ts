@@ -13,7 +13,7 @@ import { BadgesUtil } from '@open-profiler/utils/badges.util';
   imports: [ImageErrorHandlerDirective, NgOptimizedImage],
 })
 export class BadgesComponent {
-  color = input('1db954');
+  color = input('3EA44F');
   list = input<BadgeModel[]>([]);
 
   listMapped = computed(() => BadgesUtil.setLinkIcon(this.list(), this.color()));

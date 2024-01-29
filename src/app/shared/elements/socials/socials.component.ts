@@ -13,7 +13,7 @@ import { BadgesUtil } from '@open-profiler/utils/badges.util';
   imports: [NgOptimizedImage, ImageErrorHandlerDirective],
 })
 export class SocialsComponent {
-  color = input('1db954');
+  color = input('3EA44F');
   socials = input<IconModel[]>([]);
   socialsMapped = computed(() => BadgesUtil.setLinkIcon(this.socials(), this.color()));
 

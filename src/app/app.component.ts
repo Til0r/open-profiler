@@ -29,7 +29,7 @@ import { orderBy } from 'lodash';
 export class AppComponent implements OnInit {
   ThemeConstant = ThemeConstant;
 
-  colorBadges = signal('1db954');
+  colorBadges = signal('3EA44F');
   currentYear = new Date().getFullYear();
   openProfilerConfig = signal<Partial<OpenProfilerModel>>(openProfilerConfig);
 
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
       ),
     }));
 
-    const primary = openProfilerConfig.color?.primary || '#1db954';
+    const primary = openProfilerConfig.color?.primary || '#1ca955';
 
     this.setCssVariable('--primary', primary);
     this.setCssVariable('--border-color', `${primary}10`);
