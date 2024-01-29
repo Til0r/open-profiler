@@ -28,6 +28,10 @@ fs.readFile(indexPath, 'utf-8', (err, data) => {
 
   let updatedData = data;
 
+  const title = seo?.['title']
+  if (title)
+    updatedData = data.replace(/<title>(.*?)<\/title>/gi, `<title>${title}</title>`)
+
   const metaTagsList = data.match(/<meta\b[^>]*>/gi);
 
   if (metaTagsList) {
