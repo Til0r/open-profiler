@@ -40,6 +40,9 @@
       "@open-profiler/elements/*": [
         "./src/app/shared/elements/*"
       ],
+      "@open-profiler/directives/*": [
+        "./src/app/shared/directives/*"
+      ],
       "@open-profiler/env/*": [
         "./src/environments/*"
       ],

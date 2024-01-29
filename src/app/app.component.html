@@ -24,6 +24,7 @@
               width="120"
               height="120"
               alt="avatar"
+              imageErrorHandler
               [ngSrc]="avatarUrl"
               class="rounded-full h-[revert-layer] object-cover"
             />
@@ -135,6 +136,7 @@
                       priority
                       width="350"
                       height="250"
+                      imageErrorHandler
                       [ngSrc]="heroLink"
                       [alt]="project.name"
                       class="overflow-hidden rounded-2xl object-contain object-center my-auto"

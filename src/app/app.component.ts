@@ -3,6 +3,7 @@ import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { openProfilerConfig } from '@open-profiler/config/open-profiler.config';
 import { ThemeConstant } from '@open-profiler/constants/theme.constant';
+import { ImageErrorHandlerDirective } from '@open-profiler/directives/image-error-handler.directive';
 import { BadgesComponent } from '@open-profiler/elements/badges/badges.component';
 import { ExperienceComponent } from '@open-profiler/elements/experience/experience.component';
 import { SocialsComponent } from '@open-profiler/elements/socials/socials.component';
@@ -22,6 +23,7 @@ import { orderBy } from 'lodash';
     BadgesComponent,
     ExperienceComponent,
     SocialsComponent,
+    ImageErrorHandlerDirective,
   ],
 })
 export class AppComponent implements OnInit {

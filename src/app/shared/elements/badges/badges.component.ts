@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ImageErrorHandlerDirective } from '@open-profiler/directives/image-error-handler.directive';
 import { BadgeModel } from '@open-profiler/models/badge.model';
 import { BadgesUtil } from '@open-profiler/utils/badges.util';
 
@@ -8,8 +9,8 @@ import { BadgesUtil } from '@open-profiler/utils/badges.util';
   selector: 'open-profiler-badges',
   styleUrl: './badges.component.scss',
   templateUrl: './badges.component.html',
-  imports: [NgOptimizedImage],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ImageErrorHandlerDirective, NgOptimizedImage],
 })
 export class BadgesComponent {
   color = input('1db954');
