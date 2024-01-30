@@ -1,39 +1,220 @@
 {
   "color": {
-    "badges": "#1db954",
-    "primary": "#1db954"
+    "badges": "#3EA44F",
+    "primary": "#1ca955"
   },
   "banner": {
-    "name": "Jane Doe",
-    "role": "Full Stack Developer",
+    "name": "Antonio Santangelo",
+    "role": "Senior Front End Developer",
     "city": "Milan",
     "socials": [
       {
         "icon": "linkedin",
-        "redirect": "https://www.linkedin.com/janedoe"
-      },
-      {
-        "icon": "twitter",
-        "redirect": "https://twitter.com/janedoe"
+        "redirect": "https://www.linkedin.com/in/antoniosantangelo"
       },
       {
         "icon": "github",
-        "redirect": "https://github.com/janedoe"
+        "redirect": "https://github.com/Til0r"
       },
       {
         "icon": "gitlab",
-        "redirect": "https://gitlab.com/janedoe"
+        "redirect": "https://gitlab.com/antonio.santangelo"
       },
       {
         "icon": "medium",
-        "redirect": "https://medium.com/@janedoe"
+        "redirect": "https://medium.com/@sntangelo"
       }
     ],
-    "avatarUrl": "./assets/avatar.jpg"
+    "avatarUrl": "./assets/avatar.jpeg"
   },
-  "about": "Passionate and results-driven Full Stack Developer with expertise in building scalable web applications. Proven track record of delivering high-quality software solutions in fast-paced environments.",
+  "about": "Hi, I'm Antonio, a Senior Front-End Software Developer with 5+ years of experience. I'm passionate about crafting powerful web applications for exceptional user experiences. My expertise lies in Angular development and a solid understanding of modern web technologies. <br /> My motto: 'Code until inspiration runs dry.' 🚀",
+  "experiences": [
+    {
+      "title": "Senior Frontend Developer",
+      "company": "Gruppo Distribuzione SPA",
+      "date": {
+        "start": "2021-07-01"
+      },
+      "badges": [
+        {
+          "label": "angular",
+          "icon": "angular"
+        },
+        {
+          "label": "nodejs",
+          "icon": "nodedotjs"
+        },
+        {
+          "label": "docker",
+          "icon": "docker"
+        },
+        {
+          "label": "firebase",
+          "icon": "firebase"
+        },
+        {
+          "label": "ionic",
+          "icon": "ionic"
+        },
+        {
+          "label": "python",
+          "icon": "python"
+        }
+      ],
+      "description": "Tech leader specializing in Frontend architecture with expertise in Angular 12+, Webpack, and Chatbot development for Customer Care. Proficient in Python Workflow and experienced in building Hybrid Apps using Ionic"
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Sync Lab S.r.l",
+      "date": {
+        "end": "2021-07-01",
+        "start": "2018-11-01"
+      },
+      "badges": [
+        {
+          "label": "angular",
+          "icon": "angular"
+        },
+        {
+          "label": "nodejs",
+          "icon": "nodedotjs"
+        },
+        {
+          "label": "firebase",
+          "icon": "firebase"
+        },
+        {
+          "label": "ionic",
+          "icon": "ionic"
+        }
+      ],
+      "children": [
+        {
+          "title": "Consultant Angular Developer",
+          "company": "Ministero della Giustizia",
+          "date": {
+            "end": "2020-10-01",
+            "start": "2021-07-01"
+          },
+          "badges": [
+            {
+              "label": "angular",
+              "icon": "angular"
+            },
+            {
+              "label": "rxjs",
+              "icon": "reactiveX"
+            }
+          ],
+          "description": "Orchestrated transformative projects across Webkit, Portale Servizi Casellario, and Casellario Beccaria. Crafted seamless Angular solutions, meeting Agid UI/UX standards with finesse"
+        },
+        {
+          "title": "Consultant Full Stack",
+          "company": "Aktive Reply",
+          "date": {
+            "end": "2019-09-01",
+            "start": "2020-10-01"
+          },
+          "badges": [
+            {
+              "label": "angular",
+              "icon": "angular"
+            },
+            {
+              "label": "rxjs",
+              "icon": "reactiveX"
+            },
+            {
+              "label": "java",
+              "icon": "java"
+            },
+            {
+              "label": "AEM",
+              "icon": "aem"
+            }
+          ],
+          "description": "AEM Developer Consultant with expertise in AEM development for notable clients like BNL and PRADA"
+        },
+        {
+          "title": "Consultant Angular Developer",
+          "company": "REV Gestione Crediti S.p.A.",
+          "date": {
+            "end": "2019-02-01",
+            "start": "2019-12-01"
+          },
+          "badges": [
+            {
+              "label": "angular",
+              "icon": "angular"
+            },
+            {
+              "label": "rxjs",
+              "icon": "reactiveX"
+            }
+          ],
+          "description": "Led the restructuring of the company's Information System, encompassing Intranet and Internet domains"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "OpenStream",
+      "description": "A platform that simplifies NFT trading, providing deep analytics for market control. Desktop & Mobile support, collaborative code enhancement with NFT communities",
+      "heroLink": "./assets/open-stream.jpeg",
+      "redirect": "https://www.openstreamnft.com/",
+      "socials": [
+        {
+          "icon": "linkedin",
+          "redirect": "https://www.linkedin.com/company/openstreamnft/"
+        }
+      ]
+    },
+    {
+      "name": "Open profiler",
+      "description": "Build your unique online presence with Open Profiler a responsive and feature-rich portfolio, easily tailored to showcase your skills, experience, and projects",
+      "heroLink": "./assets/open-profiler.png",
+      "redirect": "https://open-profiler.netlify.app/",
+      "socials": [
+        {
+          "icon": "github",
+          "redirect": "https://github.com/Til0r/open-profiler"
+        }
+      ]
+    },
+    {
+      "name": "Version Wizard",
+      "description": "Streamline your frontend project management with Version Wizard, the essential extension that simplifies tagging and building new versions effortlessly",
+      "heroLink": "./assets/tag_version_with_build.gif",
+      "redirect": "https://marketplace.visualstudio.com/items?itemName=til0r.version-wizard",
+      "socials": [
+        {
+          "icon": "github",
+          "redirect": "https://github.com/Til0r/version-wizard"
+        },
+        {
+          "icon": "medium",
+          "redirect": "https://medium.com/@sntangelo/streamline-your-project-management-with-version-wizard-the-ultimate-vs-code-extension-db8c7e5e917f"
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "mail": "sntangelo@gmail.com",
+    "description": "Feel free to reach out to me if you have any questions or collaboration opportunities. I am open to new challenges and projects."
+  },
+  "education": [
+    {
+      "title": "Diploma from Technical Institute in Computer Science and Telecommunications",
+      "company": "Istituo Tecnico Fondazione Villaggio dei Ragazzi",
+      "date": {
+        "end": "2013-09-01",
+        "start": "2018-09-01"
+      }
+    }
+  ],
   "badges": {
-    "frontend": [
+    "tech stack": [
       {
         "label": "angular",
         "icon": "angular"
@@ -59,206 +240,49 @@
         "icon": "redux"
       },
       {
+        "label": "electron",
+        "icon": "electron"
+      },
+      {
+        "label": "rxjs",
+        "icon": "reactiveX"
+      },
+      {
         "label": "npm",
         "icon": "npm"
       },
       {
-        "label": "webpack",
-        "icon": "webpack"
-      },
-      {
-        "label": "graphql",
-        "icon": "graphql"
-      },
-      {
-        "label": "Firebase",
-        "icon": "Firebase"
-      }
-    ],
-    "backend": [
-      {
-        "label": "nodejs",
-        "icon": "nodedotjs"
+        "label": "ionic",
+        "icon": "ionic"
       },
       {
         "label": "python",
         "icon": "python"
       },
       {
-        "label": "django",
-        "icon": "django"
-      },
-      {
         "label": "flask",
         "icon": "flask"
       },
       {
-        "label": "mongodb",
-        "icon": "mongodb"
+        "label": "webpack",
+        "icon": "webpack"
       },
       {
-        "label": "mysql",
-        "icon": "mysql"
+        "label": "web3.js",
+        "icon": "web3.js"
+      },
+      {
+        "label": "solidity",
+        "icon": "solidity"
+      },
+      {
+        "label": "firebase",
+        "icon": "firebase"
       },
       {
         "label": "docker",
         "icon": "docker"
       }
-    ],
-    "empty": []
-  },
-  "experiences": [
-    {
-      "title": "Senior Developer",
-      "company": "TechCo",
-      "date": {
-        "start": "2019-02-01"
-      },
-      "description": "Led a team of developers in the successful delivery of multiple web applications.",
-      "badges": [
-        {
-          "label": "angular",
-          "icon": "angular"
-        },
-        {
-          "label": "nodejs",
-          "icon": "nodedotjs"
-        },
-        {
-          "label": "docker",
-          "icon": "docker"
-        }
-      ],
-      "children": [
-        {
-          "title": "Senior Developer",
-          "company": "TechCo",
-          "date": {
-            "start": "2019-02-01"
-          },
-          "description": "Led a team of developers in the successful delivery of multiple web applications.",
-          "badges": [
-            {
-              "label": "angular",
-              "icon": "angular"
-            },
-            {
-              "label": "nodejs",
-              "icon": "nodedotjs"
-            },
-            {
-              "label": "docker",
-              "icon": "docker"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Software Engineer",
-      "company": "InnoCorp",
-      "date": {
-        "end": "2019-03-01",
-        "start": "2017-02-01"
-      },
-      "description": "Contributed to the development of a cutting-edge e-commerce platform."
-    },
-    {
-      "title": "Team Lead",
-      "company": "InnoCorp",
-      "date": {
-        "start": "2016-05-01",
-        "end": "2017-01-01"
-      },
-      "description": "Managed a cross-functional team, overseeing project development and ensuring timely delivery."
-    }
-  ],
-  "projects": [
-    {
-      "name": "E-commerce Platform",
-      "description": "Built a scalable and responsive e-commerce platform with integrated payment gateways.",
-      "heroLink": "./assets/ecommerce.jpg",
-      "socials": [
-        {
-          "icon": "github",
-          "redirect": "https://github.com/janedoe"
-        },
-        {
-          "icon": "gitlab",
-          "redirect": "https://gitlab.com/janedoe"
-        },
-        {
-          "icon": "medium",
-          "redirect": "https://medium.com/@janedoe"
-        }
-      ]
-    },
-    {
-      "name": "Social Networking App",
-      "description": "Developed a feature-rich social networking app with real-time messaging functionality.",
-      "heroLink": "./assets/socialapp.jpg",
-      "socials": [
-        {
-          "icon": "github",
-          "redirect": "https://github.com/janedoe/socialapp"
-        },
-        {
-          "icon": "twitter",
-          "redirect": "https://twitter.com/janedoe/socialapp"
-        }
-      ]
-    },
-    {
-      "name": "Real-time Chat Application",
-      "description": "Developed a secure and efficient real-time chat application with end-to-end encryption for enhanced privacy.",
-      "heroLink": "./assets/chatapp.jpg",
-      "socials": [
-        {
-          "icon": "github",
-          "redirect": "https://github.com/janedoe/chatapp"
-        },
-        {
-          "icon": "twitter",
-          "redirect": "https://twitter.com/janedoe/chatapp"
-        },
-        {
-          "icon": "linkedin",
-          "redirect": "https://www.linkedin.com/in/janedoe/chatapp"
-        }
-      ]
-    }
-  ],
-  "contact": {
-    "mail": "jane.doe@mail.com",
-    "description": "Feel free to reach out to me if you have any questions or collaboration opportunities. I am open to new challenges and projects."
-  },
-  "education": [
-    {
-      "title": "Bachelor of Science in Computer Science",
-      "company": "University of Tech",
-      "date": {
-        "end": "2016-05-01",
-        "start": "2012-09-01"
-      },
-      "description": "Studied computer science with a focus on web development and software engineering."
-    },
-    {
-      "title": "Web Development Bootcamp",
-      "company": "Code Academy",
-      "date": {
-        "end": "2017-08-01",
-        "start": "2017-06-01"
-      },
-      "description": "Completed an intensive web development bootcamp, gaining hands-on experience in modern web technologies."
-    },
-    {
-      "title": "Certification in Advanced Python Development",
-      "company": "TechSkills Institute",
-      "date": {
-        "end": "2018-12-01",
-        "start": "2018-06-01"
-      },
-      "description": "Obtained certification in advanced Python development, showcasing expertise in backend development."
-    }
-  ]
+    ]
+  }
 }
