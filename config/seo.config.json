@@ -1,9 +1,9 @@
 {
-    "url": "https://open-profiler.netlify.app/",
+    "url": "https://antoniosantangelo.it/",
     "type": "website",
     "card": "summary_large_image",
-    "title": "Open Profiler",
+    "title": "Antonio Santangelo",
     "image": "/assets/open-profiler.png",
     "domain": "domain",
-    "description": "Build your unique online presence with Open Profiler a responsive and feature-rich portfolio, easily tailored to showcase your skills, experience, and projects."
+    "description": "Hi, I'm Antonio, a Senior Front-End Software Developer with 5+ years of experience. I'm passionate about crafting powerful web applications for exceptional user experiences. My expertise lies in Angular development and a solid understanding of modern web technologies."
 }
