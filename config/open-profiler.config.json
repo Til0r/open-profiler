@@ -31,14 +31,44 @@
   "experiences": [
     {
       "title": "Senior Frontend Developer",
+      "company": "Aruba.it",
+      "date": {
+        "start": "2024-06-01"
+      },
+      "badges": [
+        {
+          "label": "angular",
+          "icon": "angular"
+        },
+        {
+          "label": "rxjs",
+          "icon": "reactiveX"
+        },
+        {
+          "label": "nodejs",
+          "icon": "nodedotjs"
+        },
+        {
+          "label": "docker",
+          "icon": "docker"
+        }
+      ]
+    },
+    {
+      "title": "Senior Frontend Developer",
       "company": "Gruppo Distribuzione SPA",
       "date": {
+        "end": "2024-05-31",
         "start": "2021-07-01"
       },
       "badges": [
         {
           "label": "angular",
           "icon": "angular"
+        },
+        {
+          "label": "rxjs",
+          "icon": "reactiveX"
         },
         {
           "label": "nodejs",
