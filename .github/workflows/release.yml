@@ -40,7 +40,7 @@ jobs:
         run: tar -cvf ${{ steps.tar_name.outputs.NAME }}.tar -C dist/${{ github.event.repository.name }}/browser .
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.tar_name.outputs.NAME }}
           path: ${{ steps.tar_name.outputs.NAME }}.tar
