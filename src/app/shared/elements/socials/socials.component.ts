@@ -2,7 +2,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { ImageErrorHandlerDirective } from '@open-profiler/directives/image-error-handler.directive';
 import { IconModel } from '@open-profiler/models/icon.model';
-import { BadgesUtil } from '@open-profiler/utils/badges.util';
+import { setLinkIcon } from '@open-profiler/utils/badges.util';
 
 @Component({
   standalone: true,
@@ -15,7 +15,7 @@ import { BadgesUtil } from '@open-profiler/utils/badges.util';
 export class SocialsComponent {
   color = input('3EA44F');
   socials = input<IconModel[]>([]);
-  socialsMapped = computed(() => BadgesUtil.setLinkIcon(this.socials(), this.color()));
+  socialsMapped = computed(() => setLinkIcon(this.socials(), this.color()));
 
   constructor() {}
 }

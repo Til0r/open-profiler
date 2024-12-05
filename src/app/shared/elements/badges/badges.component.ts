@@ -2,7 +2,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { ImageErrorHandlerDirective } from '@open-profiler/directives/image-error-handler.directive';
 import { BadgeModel } from '@open-profiler/models/badge.model';
-import { BadgesUtil } from '@open-profiler/utils/badges.util';
+import { setLinkIcon } from '@open-profiler/utils/badges.util';
 
 @Component({
   standalone: true,
@@ -16,7 +16,7 @@ export class BadgesComponent {
   color = input('3EA44F');
   list = input<BadgeModel[]>([]);
 
-  listMapped = computed(() => BadgesUtil.setLinkIcon(this.list(), this.color()));
+  listMapped = computed(() => setLinkIcon(this.list(), this.color()));
 
   constructor() {}
 }
