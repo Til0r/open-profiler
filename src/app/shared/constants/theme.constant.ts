@@ -1,5 +1,5 @@
 export class ThemeConstant {
-  public static DARK = 'dark';
-  public static LIGHT = 'light';
-  public static THEME = 'theme';
+  public static readonly DARK = 'dark';
+  public static readonly LIGHT = 'light';
+  public static readonly THEME = 'theme';
 }
