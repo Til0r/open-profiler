@@ -189,6 +189,12 @@
   ],
   "projects": [
     {
+      "name": "Pronto soccorso italia",
+      "description": "Pronto Soccorso Italia is an app that helps you quickly find and access emergency services across Italy, using real-time data and geolocation technology.",
+      "heroLink": "./assets/pronto-soocorso.jpeg",
+      "redirect": "https://www.prontosoccorsoitalia.it/"
+    },
+    {
       "name": "OpenStream",
       "description": "A platform that simplifies NFT trading, providing deep analytics for market control. Desktop & Mobile support, collaborative code enhancement with NFT communities",
       "heroLink": "./assets/open-stream.jpeg",
