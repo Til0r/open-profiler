@@ -111,17 +111,20 @@
     @if (openProfilerConfig.projects; as projects) {
       @if (projects.length) {
         <section>
-          <h2>📂 <span> Projects </span></h2>
+          <h2>
+            📂
+            <span>
+              Projects <span class="text-lg italic">{{ projects.length }}</span>
+            </span>
+          </h2>
           <div class="flex gap-4 w-full snap-x snap-mandatory overflow-scroll py-2">
             @for (project of projects; track $index) {
               <div
                 class="snap-start md:w-[24.5rem] w-[18.5rem] flex-shrink-0 flex flex-col gap-4 rounded-2xl shadow-sm p-6 dark:bg-dark-card bg-light-card border-primary border"
               >
                 <div class="flex flex-col gap-2">
-                  <h3>
-                    <a [href]="project?.redirect" target="_blank">
-                      {{ project.name }}
-                    </a>
+                  <h3 class="flex flex-col gap-2">
+                    <a [href]="project?.redirect" target="_blank"> 🔗 {{ project.name }} </a>
                   </h3>
                   <div class="min-h-5">
                     @if (project.socials; as socials) {
@@ -141,7 +144,7 @@
                       imageErrorHandler
                       [ngSrc]="heroLink"
                       [alt]="project.name"
-                      class="overflow-hidden rounded-2xl object-contain object-center my-auto"
+                      class="overflow-hidden rounded-2xl object-center my-auto h-48 object-cover"
                     />
                   }
 
@@ -174,7 +177,7 @@
 
     <footer class="w-full py-12 text-center bg-primary">
       <p class="text-white md:text-lg">
-        © {{ currentYear }} - Made with ❤️ by
+        © {{ currentYear }} - Made with ❤️ with
         <a href="https://github.com/til0r/open-profiler" class="font-bold" target="_blank">
           open-profiler
         </a>
