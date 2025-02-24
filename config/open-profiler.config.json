@@ -192,7 +192,17 @@
       "name": "Pronto soccorso italia",
       "description": "Pronto Soccorso Italia is an app that helps you quickly find and access emergency services across Italy, using real-time data and geolocation technology.",
       "heroLink": "./assets/pronto-soocorso.jpeg",
-      "redirect": "https://www.prontosoccorsoitalia.it/"
+      "redirect": "https://www.prontosoccorsoitalia.it/",
+      "socials": [
+        {
+          "icon": "appstore",
+          "redirect": "https://apps.apple.com/it/app/pronto-soccorso/id6736611412"
+        },
+        {
+          "icon": "googleplay",
+          "redirect": "https://play.google.com/store/apps/details?id=com.prontosoccorsoitalia.android"
+        }
+      ]
     },
     {
       "name": "OpenStream",
