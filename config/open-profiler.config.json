@@ -233,6 +233,26 @@
           "redirect": "https://medium.com/@sntangelo/streamline-your-project-management-with-version-wizard-the-ultimate-vs-code-extension-db8c7e5e917f"
         }
       ]
+    },
+    {
+      "name": "Twitch Points Collector",
+      "description": "Automate your Twitch point collection, the must-have extension that effortlessly gathers your channel points—no clicks required! Sit back, enjoy your favorite streams, and let it do the work for you.",
+      "heroLink": "./assets/twitch-points-auto-collector.png",
+      "redirect": "https://chromewebstore.google.com/detail/twitch-points-auto-collec/cackkknkjnchcemedibohdnlejfgdben",
+      "socials": [
+        {
+          "icon": "github",
+          "redirect": "https://github.com/Til0r/twitch-points-auto-collector"
+        },
+        {
+          "icon": "chromewebstore",
+          "redirect": "https://chromewebstore.google.com/detail/twitch-points-auto-collec/cackkknkjnchcemedibohdnlejfgdben"
+        },
+        {
+          "icon": "medium",
+          "redirect": "https://medium.com/@sntangelo/twitch-points-auto-collector-automating-rewards-for-fun-and-learning-1a743f7770b0"
+        }
+      ]
     }
   ],
   "contact": {
