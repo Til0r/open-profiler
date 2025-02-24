@@ -211,8 +211,24 @@
       "redirect": "https://www.openstreamnft.com/",
       "socials": [
         {
-          "icon": "linkedin",
-          "redirect": "https://www.linkedin.com/company/openstreamnft/"
+          "icon": "x",
+          "redirect": "https://x.com/OpenStreamNFT"
+        },
+        {
+          "icon": "gitbook",
+          "redirect": "https://openstream.gitbook.io/openstream"
+        },
+        {
+          "icon": "opensea",
+          "redirect": "https://opensea.io/collection/openstreampass"
+        },
+        {
+          "icon": "web3dotjs",
+          "redirect": "https://developers.moralis.com/web3-wiki/openstream/"
+        },
+        {
+          "icon": "web3dotjs",
+          "redirect": "https://www.alchemy.com/dapps/openstream-nft"
         }
       ]
     },
