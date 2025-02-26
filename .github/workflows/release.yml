@@ -23,7 +23,7 @@ jobs:
 
       - name: Get name tar
         id: tar_name
-        run: echo "::set-output name=NAME::${{ github.event.repository.name }}_${GITHUB_REF#refs/tags/}"
+        run: echo "NAME=${{ github.event.repository.name }}_${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -37,15 +37,15 @@ jobs:
         run: npm run build
 
       - name: Tar files
-        run: tar -cvf ${{ steps.tar_name.outputs.NAME }}.tar -C dist/${{ github.event.repository.name }}/browser .
+        run: tar -cvf ${{ env.NAME }}.tar -C dist/${{ github.event.repository.name }}/browser .
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.tar_name.outputs.NAME }}
-          path: ${{ steps.tar_name.outputs.NAME }}.tar
+          name: ${{ env.NAME }}
+          path: ${{ env.NAME }}.tar
 
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: ${{ steps.tar_name.outputs.NAME }}.tar
+          artifacts: ${{ env.NAME }}.tar
