@@ -52,7 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^8.31.0",
     "autoprefixer": "^10.4.16",
-    "eslint": "^9.24.0",
+    "eslint": "^9.28.0",
     "husky": "^8.0.0",
     "jasmine-core": "~5.7.1",
     "karma": "~6.4.0",
