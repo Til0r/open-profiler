@@ -1,6 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { openProfilerConfig } from '@open-profiler/config/open-profiler.config';
 import { ThemeConstant } from '@open-profiler/constants/theme.constant';
 import { ImageErrorHandlerDirective } from '@open-profiler/directives/image-error-handler.directive';
@@ -18,7 +17,6 @@ import { orderBy } from 'lodash';
   templateUrl: './app.component.html',
   imports: [
     CommonModule,
-    RouterOutlet,
     NgOptimizedImage,
     BadgesComponent,
     ExperienceComponent,

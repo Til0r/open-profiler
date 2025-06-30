@@ -1,7 +1,6 @@
 @import 'fonts';
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+
+@import 'tailwindcss';
 
 html,
 body {
@@ -25,7 +24,7 @@ body {
   }
 
   h2 {
-    @apply md:text-4xl text-2xl font-bold  dark:text-gray-100 text-gray-800;
+    @apply md:text-4xl text-2xl font-bold dark:text-gray-100 text-gray-800;
 
     span {
       @apply italic;
