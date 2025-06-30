@@ -91,7 +91,7 @@
           "icon": "python"
         }
       ],
-      "description": "Tech leader specializing in Frontend architecture with expertise in Angular 12+, Webpack, and Chatbot development for Customer Care. Proficient in Python Workflow and experienced in building Hybrid Apps using Ionic"
+      "description": "Led frontend architecture and team development using Angular 12+, building a custom web kit and integrating 15+ apps via Webpack Module Federation. Designed a chatbot system to enhance customer care through NLP tools, and developed Python services and automation scripts to optimize workflows. Created a high-usage Ionic app for secure green pass scanning during the pandemic."
     },
     {
       "title": "Software Developer",
@@ -136,7 +136,7 @@
               "icon": "reactiveX"
             }
           ],
-          "description": "Orchestrated transformative projects across Webkit, Portale Servizi Casellario, and Casellario Beccaria. Crafted seamless Angular solutions, meeting Agid UI/UX standards with finesse"
+          "description": "Developed three platforms Webkit, Portale Servizi Casellario, and Casellario Beccaria, focusing on reusable components and consistent UI. Custom Webkit components were shared across portals, ensuring alignment with AgID UI/UX guidelines."
         },
         {
           "title": "Consultant Full Stack",
@@ -163,7 +163,7 @@
               "icon": "aem"
             }
           ],
-          "description": "AEM Developer Consultant with expertise in AEM development for notable clients like BNL and PRADA"
+          "description": "Experience in AEM development for high-profile clients including BNL and PRADA, delivering tailored content management solutions aligned with brand and performance standards."
         },
         {
           "title": "Consultant Angular Developer",
@@ -182,14 +182,30 @@
               "icon": "reactiveX"
             }
           ],
-          "description": "Led the restructuring of the company's Information System, encompassing Intranet and Internet domains"
+          "description": "Led the restructuring of the company’s Information System, including both Intranet and public-facing Internet platforms, improving accessibility and system efficiency."
         }
       ]
     }
   ],
   "projects": [
     {
-      "name": "Pronto soccorso italia",
+      "name": "System Versions",
+      "description": "A VS Code extension that shows versions of key dev tools in the sidebar, so you can check your setup instantly without using the terminal.",
+      "heroLink": "./assets/system-versions-preview.png",
+      "redirect": "https://marketplace.visualstudio.com/items?itemName=til0r.syv",
+      "socials": [
+        {
+          "icon": "github",
+          "redirect": "https://github.com/Til0r/system-versions"
+        },
+        {
+          "icon": "medium",
+          "redirect": "https://medium.com/@sntangelo/i-am-done-typing-all-those-commands-and-this-visual-studio-code-extension-solved-my-daily-developer-b139258d7f47"
+        }
+      ]
+    },
+    {
+      "name": "Pronto soccorso",
       "description": "Pronto Soccorso Italia is an app that helps you quickly find and access emergency services across Italy, using real-time data and geolocation technology.",
       "heroLink": "./assets/pronto-soocorso.jpeg",
       "redirect": "https://www.prontosoccorsoitalia.it/",
