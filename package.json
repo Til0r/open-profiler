@@ -35,7 +35,7 @@
     "@angular/core": "^19.2.2",
     "@angular/forms": "^20.3.4",
     "@angular/platform-browser": "^20.3.3",
-    "@angular/platform-browser-dynamic": "^17.1.1",
+    "@angular/platform-browser-dynamic": "^20.3.9",
     "@angular/router": "^17.1.1",
     "@types/lodash": "^4.17.20",
     "rxjs": "~7.8.0",
