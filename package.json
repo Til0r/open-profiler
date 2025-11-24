@@ -29,7 +29,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^19.2.6",
+    "@angular/animations": "^21.0.0",
     "@angular/common": "^20.2.4",
     "@angular/compiler": "^20.3.9",
     "@angular/core": "^19.2.2",
