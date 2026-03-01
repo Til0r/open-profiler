@@ -16,6 +16,4 @@ export class SocialsComponent {
   color = input('3EA44F');
   socials = input<IconModel[]>([]);
   socialsMapped = computed(() => setLinkIcon(this.socials(), this.color()));
-
-  constructor() {}
 }

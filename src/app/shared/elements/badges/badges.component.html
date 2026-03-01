@@ -1,9 +1,9 @@
 @if (listMapped(); as list) {
   @if (list.length) {
     <div class="flex flex-wrap gap-4">
-      @for (badge of list; track $index) {
+      @for (badge of list; track badge.label) {
         <div
-          class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 px-3 w-fit font-semibold cursor-default shadow-sm border-primary border dark:bg-dark-card bg-light-card"
+          class="inline-flex items-center gap-2 justify-center rounded-2xl py-1 px-3 w-fit font-semibold cursor-default shadow-sm dark:bg-dark-card bg-light-card"
         >
           @if (badge.link) {
             <img

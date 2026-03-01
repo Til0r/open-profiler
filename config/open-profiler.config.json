@@ -41,6 +41,22 @@
           "icon": "angular"
         },
         {
+          "label": "angular material",
+          "icon": "angular"
+        },
+        {
+          "label": "tailwindcss",
+          "icon": "tailwindcss"
+        },
+        {
+          "label": "ionic",
+          "icon": "ionic"
+        },
+        {
+          "label": "capacitor",
+          "icon": "capacitor"
+        },
+        {
           "label": "rxjs",
           "icon": "reactiveX"
         },
@@ -51,8 +67,13 @@
         {
           "label": "docker",
           "icon": "docker"
+        },
+        {
+          "label": "firebase",
+          "icon": "firebase"
         }
-      ]
+      ],
+      "description": "Designed and developed the core of the Fatturazione Elettronica platform, leading an architectural reengineering focused on scalability, multi-tenancy, and configuration-driven customization. Also managed the acquisition of Scontrina, a receipt generation platform for e-commerce, integrating it into the company's systems and driving improvements and product evolution. Served as technical lead, guiding both the product roadmap and the development team."
     },
     {
       "title": "Senior Frontend Developer",
@@ -188,6 +209,12 @@
     }
   ],
   "projects": [
+    {
+      "name": "Bizcardo",
+      "description": "Create and share digital business cards instantly. A modern platform to build your professional identity and network effortlessly, replacing traditional paper cards with a smart digital experience.",
+      "heroLink": "./assets/bizcardo.png",
+      "redirect": "https://bizcardo.it/"
+    },
     {
       "name": "System Versions",
       "description": "A VS Code extension that shows versions of key dev tools in the sidebar, so you can check your setup instantly without using the terminal.",

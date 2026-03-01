@@ -1,15 +1,15 @@
 /* eslint-disable @angular-eslint/directive-selector */
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 
 @Directive({
   standalone: true,
   selector: '[imageErrorHandler]',
 })
 export class ImageErrorHandlerDirective {
-  constructor(private el: ElementRef) {}
+  private readonly el = inject(ElementRef);
 
   @HostListener('error')
-  private onError() {
+  onError() {
     this.el.nativeElement.style.display = 'none';
   }
 }

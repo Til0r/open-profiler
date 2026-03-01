@@ -1,14 +1,16 @@
 @import 'fonts';
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-dark: var(--dark);
+  --color-light: var(--light);
+  --color-primary: var(--primary);
+  --color-dark-card: var(--dark-card);
+  --color-light-card: var(--light-card);
+  --color-dark-second-level: var(--dark-second-level);
+  --color-light-second-level: var(--light-second-level);
 }
 
 @layer components {
@@ -25,7 +27,7 @@ body {
   }
 
   h2 {
-    @apply md:text-4xl text-2xl font-bold  dark:text-gray-100 text-gray-800;
+    @apply md:text-4xl text-2xl font-bold dark:text-gray-100 text-gray-800;
 
     span {
       @apply italic;
