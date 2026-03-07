@@ -17,6 +17,4 @@ export class BadgesComponent {
   list = input<BadgeModel[]>([]);
 
   listMapped = computed(() => setLinkIcon(this.list(), this.color()));
-
-  constructor() {}
 }

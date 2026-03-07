@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ExperienceModel } from '@open-profiler/models/experience.model';
 import { BadgesComponent } from '../badges/badges.component';
@@ -7,13 +7,11 @@ import { BadgesComponent } from '../badges/badges.component';
   standalone: true,
   selector: 'open-profiler-experience',
   styleUrl: './experience.component.scss',
-  imports: [CommonModule, BadgesComponent],
+  imports: [DatePipe, BadgesComponent],
   templateUrl: './experience.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExperienceComponent {
   colorBadges = input<string>('');
   experiences = input<ExperienceModel[]>([]);
-
-  constructor() {}
 }

@@ -1,9 +1,9 @@
 @if (socialsMapped(); as socials) {
   @if (socials.length) {
     <div class="flex flex-wrap gap-2 mx-auto items-center w-full">
-      @for (social of socials; track $index) {
+      @for (social of socials; track social.icon) {
         @if (social.link) {
-          <a [href]="social.redirect" target="_blank">
+          <a [href]="social.redirect" target="_blank" rel="noopener" [title]="social.icon">
             <img
               width="20"
               height="20"
