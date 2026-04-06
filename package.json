@@ -51,7 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
     "@tailwindcss/postcss": "^4.2.1",
-    "autoprefixer": "^10.4.24",
+    "autoprefixer": "^10.4.27",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
     "jasmine-core": "~5.7.1",
