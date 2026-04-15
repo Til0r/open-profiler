@@ -11,24 +11,23 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
 
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Get name tar
-        id: tar_name
+      - name: Get tar name
         run: echo "NAME=${{ github.event.repository.name }}_${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20.x"
 
       - name: Install dependencies
         run: npm ci
@@ -37,15 +36,15 @@ jobs:
         run: npm run build
 
       - name: Tar files
-        run: tar -cvf ${{ env.NAME }}.tar -C dist/${{ github.event.repository.name }}/browser .
+        run: tar -cvf "${{ env.NAME }}.tar" -C "dist/${{ github.event.repository.name }}/browser" .
 
-      - name: Upload Artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.NAME }}
           path: ${{ env.NAME }}.tar
 
-      - name: Push Build to Releases
+      - name: Push build to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: ${{ env.NAME }}.tar
