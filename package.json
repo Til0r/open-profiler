@@ -31,7 +31,7 @@
   "dependencies": {
     "@angular/animations": "^22.0.7",
     "@angular/common": "^22.1.0",
-    "@angular/compiler": "^22.1.1",
+    "@angular/compiler": "^22.1.2",
     "@angular/core": "^22.0.7",
     "@angular/forms": "^22.1.0",
     "@angular/platform-browser": "^22.1.0",
@@ -61,7 +61,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.2.0",
     "lint-staged": "^17.0.7",
-    "postcss": "^8.5.21",
+    "postcss": "^8.5.26",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.3.2",
     "typescript": "~5.9.3"
